@@ -48,7 +48,7 @@ header{
   
   .menu_icon {
     width: 30px;
-    height: 30px;
+    height: 40px;
     padding: 4px;
     display: flex;
     flex-direction: column;
@@ -171,10 +171,17 @@ a{
 }
 .main-menu.opened{
     transform: translateX(0);
+    position: fixed;
 }
-a:hover{
+.cont2.hidden{
+  opacity: 0;
+} 
+li:hover{
     padding: 10px;
     background-color: rgba(39, 13, 59, 0.4);
+}
+a:hover{
+  text-decoration:dashed;
 }
 h1{
     color: rgba(39, 13, 59, 0.8);
@@ -185,8 +192,11 @@ main{
     height: 100%;
 }
 .img{
-    display: flex;
-    flex-direction: column;
+  width: 900px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 .container{
     display: flex;
@@ -196,8 +206,37 @@ main{
     width: 100%;
 }
 .image{
-    width: 800px;
-    height: 500px;
-    border: 1px solid rgba(39, 13, 59, 0.4);
+    width: 900px;
+    height: 560px;
+    border: 3px solid rgba(39, 13, 59, 0.4);
     margin-left: -250px;
+    object-fit: cover; 
+    border-radius: 10px;
+}
+.cont2{
+  display: flex;
+  gap: 50px;
+  width: 100%;
+}
+.cont2 h3{
+  text-align: center;
+}
+.description{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 600px;
+  color:  rgba(39, 13, 59);
+}
+.quality{
+  position: absolute;
+  bottom: -90px;
+  right: 28px;
+}
+.iconic{
+  width: max-content;
+  height: 60px;
+  background-color: #ded1fd;
+  border-radius: 30%;
 }
