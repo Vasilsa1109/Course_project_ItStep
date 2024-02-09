@@ -11,7 +11,7 @@ if(m){
         }
         else{
             m.classList.add("pushed");
-            nav.clsList.add("opened");
+            nav.classList.add("opened");
             cont2.classList.add("hidden");
         }
     });
@@ -78,3 +78,22 @@ $('.slider').slick({
   })(jQuery);
   
   $('.overlay').addClass('overlay-blue');
+
+
+  $('.reviews fade').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear'
+  });
+
+
+  $('.slider_').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: true
+  });
+      

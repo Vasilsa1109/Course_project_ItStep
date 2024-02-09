@@ -1,0 +1,23 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.who{
+   
+}
+.slider_{
+    padding-top: 30px;
+    width: 900px;
+    }
+    .slick-slide{
+    width: 600px;
+    height: 600px;
+    border: 1px solid rebeccapurple;
+    }
+    .slick-slide img{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    }
