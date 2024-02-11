@@ -26,7 +26,7 @@
                 <li><a href="">Главная</a></li>
                 <li><a href="catalog/index.html">Каталог товаров</a></li>
                 <li><a href="about us/index.html">О нас</a></li>
-                <li><a href="">Акции</a></li>
+                <li><a href="about us/index.html">Акции</a></li>
                 <li><a href="about us/index.html">Контакты</a></li>
             </ul>
         </nav>
@@ -65,8 +65,8 @@
         </div>
     </header>
     <main>
-        <div class="container">
-          <h1>Internet shop</h1>
+      <h1>Internet shop</h1>
+      <div class="container">
           <div class="cont2">
             <div class="img">
               <img src="images/img_1.jpg" alt="" class="image">
@@ -90,6 +90,7 @@
               </div>
             </div>
         </div>
+      </div>
         <hr>
         <div class="block1">
             <h1>Почему мы?</h1>
@@ -110,7 +111,7 @@
                 <div class="reason 3">
                     <div class="3-rd">
                         <img src="" alt="">
-                        <h4>Разнообразие <p class="p">и</p> уникальность</h4>
+                        <h4>Разнообразие и уникальность</h4>
                         <p></p>
                     </div>
                 </div> 
@@ -197,38 +198,17 @@
         <form>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+              <label for="inputEmail4">ФИО</label>
+              <input type="text" class="form-control" id="inputEmail4" placeholder="">
             </div>
             <div class="form-group col-md-6">
-              <label for="inputPassword4">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+              <label for="inputPassword4">Номер телефона</label>
+              <input type="tel" class="form-control" id="inputPassword4" placeholder="+375xxxxxxxxx">
             </div>
           </div>
           <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-          </div>
-          <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCity">City</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">State</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
-            </div>
+            <label for="inputAddress">Ваше сообщение</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Текст сообщения">
           </div>
           <div class="form-group">
             <div class="form-check">
@@ -238,8 +218,13 @@
               </label>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <button type="submit" class="btn btn-primary" onclick="sendForm(event)">Отправить</button>
         </form>
+      </div>
+      <div class="footer2">
+          <div>Content</div>
+          <div>Content</div>
+          <div></div>
       </div>
     </main>
 </body>

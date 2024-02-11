@@ -97,3 +97,42 @@ $('.slider').slick({
     adaptiveHeight: true
   });
       
+  function sendForm(event) {
+    let error = 0;
+  
+    error += validate(
+      event.target[0],
+      /^[А-Я][а-яА-Я\s]*[а-я]$/g,
+      "Введите корректное имя"
+    );
+    error += validate(
+      event.target[1],
+      /^\+375[0-9]{9}$/g,
+      "Введите правильный номер телефона (+375ХХХХХХХХХ)"
+    );
+    if(event.target[2] == ""){
+      error += validate(
+        event.target[2],
+        "Введите корректное сообщение"
+      )};
+};
+
+function validate(element, regexTemplate, errorMessage) {
+  let val = element.value;
+  let errorField = document.createElement("div");
+  errorField.classList.add("error");
+
+  if (element.nextElementSibling) {
+    element.nextElementSibling.remove();
+    element.classList.remove("error");
+  }
+
+  if (!regexTemplate.test(val)) {
+    errorField.innerText = errorMessage;
+    element.parentElement.append(errorField);
+    element.classList.add("error");
+    return true;
+  } else {
+    return false;
+  }
+}
