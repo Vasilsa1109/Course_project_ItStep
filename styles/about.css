@@ -1,10 +1,7 @@
 main{
     display: flex;
-     align-items: center;
+    align-items: center;
     flex-direction: column; 
-}
-.who .container{
-    display: flex;
 }
 .slider_{
     width: 1200px;
@@ -23,12 +20,20 @@ main{
     justify-content: center;
 }
 .contacts{
-   background-color: slateblue;
+    background-color: rgb(148, 105, 197);
+   width: 100%;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .sales{
     width: 100%;
-    border-color: slateblue;
-    display: flex;
+    border-color: rgb(148, 105, 197);
     text-align: center;
+}
+
+.contacts a{
+    color: rgb(25, 6, 47);
 }

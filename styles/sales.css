@@ -1,0 +1,7 @@
+.sales{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    background-color: rgb(171, 137, 204);
+    text-align: center;
+}

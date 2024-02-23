@@ -1,0 +1,49 @@
+
+h1{
+    padding-top: 40px;
+}
+
+.block{
+    background-color: rgb(176, 146, 216);
+    padding: 20px;
+}
+
+.block .icon{
+    font-size: 5em;
+    color: rgb(81, 59, 109);
+}
+
+.container{
+    justify-content: space-between;
+    gap: 100px;
+}
+.block{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+}
+.media{
+    width: 100%;
+    display: flex;
+    background-color: rgb(180, 141, 212);
+    border: solid 1px rgb(65, 42, 93);
+    border-radius: 10px;
+}
+
+.media i{
+    color: rgb(55, 39, 75);
+    font-size: 30px;
+    padding: 15px;
+}
+.media i:hover{
+    background-color: rgb(216, 179, 243);
+}
+.block h4:hover{
+    padding: 5px;
+    background-color: rgb(216, 179, 243);
+}
+footer{
+    padding-top: 50px;
+}
