@@ -26,6 +26,7 @@ main{
    display: flex;
    flex-direction: column;
    align-items: center;
+   border-radius: 10px;
 }
 
 .sales{
@@ -37,3 +38,57 @@ main{
 .contacts a{
     color: rgb(25, 6, 47);
 }
+.cont{
+    padding-top: 20px;
+    display: flex;
+}
+  
+.order{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* .btn {
+    padding: 1.1em 2em;
+    background: none;
+    border: 2px solid #fff;
+    font-size: 15px;
+    color: #341b3b;;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    border-radius: 12px;
+    background-color: #9475c5;
+    font-weight: bolder;
+    box-shadow: 0 2px 0 2px #000;
+   }
+   
+   .btn:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 120%;
+    background-color: #9900ff;
+    top: 50%;
+    transform: skewX(30deg) translate(-150%, -50%);
+    transition: all 0.5s;
+   }
+   
+   .btn:hover {
+    background-color: #a14cf0;
+    color: #fff;
+    box-shadow: 0 2px 0 2px #1d0d66;
+   }
+   
+   .btn:hover::before {
+    transform: skewX(30deg) translate(150%, -50%);
+    transition-delay: 0.1s;
+   }
+   
+   .btn:active {
+    transform: scale(0.9);
+   } */
