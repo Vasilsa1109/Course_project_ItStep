@@ -90,83 +90,100 @@ a{
     gap: 20px;
 }
 
-  .c {
-    height: max-content;
-    background-color: rgb(155, 138, 187);
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 10px 15px 10px 10px;
-    cursor: pointer;
-    user-select: none;
-    border-radius: 10px;
-    box-shadow: rgba(46, 46, 46, 0.2) 0px 8px 24px;
-    color: rgb(255, 255, 255);
+.heart-back-cont{
+  width: 100px;
+  padding: 10px;
+  background-color: rgb(228, 205, 255);
+  border: solid 1px rgb(87, 57, 124);
+  border-radius: 10px;
+}
+
+.heart-container {
+  --heart-color: rgb(107, 41, 124);
+  position: relative;
+  width: 30px;
+  height: 30px;
+  transition: .3s;
+}
+
+.heart-container .checkbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.heart-container .svg-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-container .svg-outline,
+        .heart-container .svg-filled {
+  fill: var(--heart-color);
+  position: absolute;
+}
+
+.heart-container .svg-filled {
+  animation: keyframes-svg-filled 1s;
+  display: none;
+}
+
+.heart-container .svg-celebrate {
+  position: absolute;
+  animation: keyframes-svg-celebrate .5s;
+  animation-fill-mode: forwards;
+  display: none;
+  stroke: var(--heart-color);
+  fill: var(--heart-color);
+  stroke-width: 2px;
+}
+
+.heart-container .checkbox:checked~.svg-container .svg-filled {
+  display: block
+}
+
+.heart-container .checkbox:checked~.svg-container .svg-celebrate {
+  display: block
+}
+
+@keyframes keyframes-svg-filled {
+  0% {
+    transform: scale(0);
   }
-  
-  #favorite {
+
+  25% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(1);
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes keyframes-svg-celebrate {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
     display: none;
   }
-  
-  #favorite:checked + .c svg {
-    fill: hsl(0deg 100% 50%);
-    stroke: hsl(0deg 100% 50%);
-    animation: heartButton 1s;
-  }
-  
-  @keyframes heartButton {
-    0% {
-      transform: scale(1);
-    }
-  
-    25% {
-      transform: scale(1.3);
-    }
-  
-    50% {
-      transform: scale(1);
-    }
-  
-    75% {
-      transform: scale(1.3);
-    }
-  
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  #favorite + .c .action {
-    position: relative;
-    overflow: hidden;
-    display: grid;
-  }
-  
-  #favorite + .c .action span {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    transition: all 0.5s;
-  }
-  
-  #favorite + .c .action span.option-1 {
-    transform: translate(0px, 0%);
-    opacity: 1;
-  }
-  
-  #favorite:checked + .c .action span.option-1 {
-    transform: translate(0px, -100%);
-    opacity: 0;
-  }
-  
-  #favorite + .c .action span.option-2 {
-    transform: translate(0px, 100%);
-    opacity: 0;
-  }
-  
-  #favorite:checked + .c .action span.option-2 {
-    transform: translate(0px, 0%);
-    opacity: 1;
-  }
-  
+}
+
+footer{
+  padding-top: 60px;
+}

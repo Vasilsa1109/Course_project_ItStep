@@ -9,3 +9,25 @@
 .footer{
     margin-top: 60px;
 }
+.sale{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+}
+.sale h6{
+    background-color: rgb(218, 197, 240);
+    padding: 20px;
+}
+.sale img{
+    width: 60%;
+    height: 400px;
+    object-fit: cover;
+    border: 5px solid rgb(44, 17, 71);
+}
+h3{
+    width: 100%;
+    background-color:  rgb(84, 34, 134);
+    color: rgb(238, 222, 253); 
+}

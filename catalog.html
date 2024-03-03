@@ -14,89 +14,92 @@
     <link rel="stylesheet" href="styles/catalog.css">
 </head>
 <body>
-    <header>
-        <div class="background">
-            <button class="menu_icon">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-        </div>
-        <img src="images/icon.png" alt="" class="iconic">
-        <nav class="main-menu">
-          <ul>
-              <li><a href="index.html">Главная</a></li>
-              <li><a href="catalog.html">Каталог товаров</a></li>
-              <li><a href="about.html">О нас</a></li>
-              <li><a href="sales.html">Акции</a></li>
-              <li><a href="contact.html">Контакты</a></li>
-          </ul>
-        </nav>
-          <div class="items">
-            <button class="button" data-tooltip="Контакты"> <i class="fa fa-phone" style="font-size:37px;color:rgba(46, 20, 77, 0.5); "></i></button>
-            <button class="button" data-tooltip="Главная страница">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
-                <path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path>
-              </svg>
-            </button>
-            <button class="button" data-tooltip="Поиск">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
-                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-              </svg>
-            </button>
-            <button class="button" data-tooltip="Личный кабинет">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
-                <path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"></path>
-              </svg>
-            </button>
-            <button class="button" data-tooltip="Избранные товары"><i class="fa fa-heart" style="font-size:37px;color:rgb(228, 160, 160); "></i></button>
-            <button class="button"  data-tooltip="Корзина товаров">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
-                <circle r="1" cy="21" cx="9"></circle>
-                <circle r="1" cy="21" cx="20"></circle>
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-              </svg>
-            </button>
-            <button class="button"  data-tooltip="Отзывы">
-              <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" fill="currentColor" class="bi bi-chat-left-heart" viewBox="0 0 16 16" style="color:rgba(46, 20, 77, 0.5);">
-                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12ZM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Z"/>
-                <path d="M8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
-              </svg>
-            </button>
-        </div>
-        </div>
-    </header>
+  <header>
+    <div class="background">
+        <button class="menu_icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+    </div>
+    <img src="images/icon.png" alt="" class="iconic"  onclick="document.location='index.html'">
+    <nav class="main-menu">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог товаров</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="sales.html">Акции</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+        </ul>
+    </nav>
+    <div class="items">
+        <button class="button" data-tooltip="Контакты"  onclick="document.location='contact.html'">  
+            <i class="fa fa-phone" style="font-size:37px;color:rgba(46, 20, 77, 0.5); "></i>
+        </button>
+        <button class="button" data-tooltip="Главная страница" onclick="document.location='index.html'">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
+            <path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path>
+          </svg>
+        </button>
+        <button class="button" data-tooltip="Поиск">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+          </svg>
+        </button>
+        <!-- <button class="button" data-tooltip="Личный кабинет">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
+            <path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"></path>
+          </svg>
+        </button> -->
+        <button class="button" data-tooltip="Избранные товары" onclick="document.location='favourites.html'"><i class="fa fa-heart" style="font-size:37px;color:rgb(228, 160, 160); "></i></button>
+        <button class="button"  data-tooltip="Корзина товаров" onclick="document.location='cart.html'">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+            <circle r="1" cy="21" cx="9"></circle>
+            <circle r="1" cy="21" cx="20"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </button>
+        <button class="button"  data-tooltip="Отзывы">
+          <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" fill="currentColor" class="bi bi-chat-left-heart" viewBox="0 0 16 16" style="color:rgba(46, 20, 77, 0.5);">
+            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12ZM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Z"/>
+            <path d="M8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+</header>
     <main>
-      <h1>Каталог товаров</h1>
+      <div class="btn-up btn-up_hide"></div>
+      <h1 class="">Каталог товаров</h1>
       <div class="container products">
             <div class="card-list">
               <div class="product info">
                 <div class="block">
                   <img src="images/scarf.jpg" alt="">
                   <div class="block2">
-                 <input value="favorite-button" name="favorite-checkbox" id="favorite" checked="checked" type="checkbox"/>
-                      <label class="c" for="favorite">
-                        <svg
-                          class="feather feather-heart"
-                          stroke-linejoin="round"
-                          stroke-linecap="round"
-                          stroke-width="2"
-                          stroke="currentColor"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          height="24"
-                          width="24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                          ></path>
-                        </svg>
-                        <div class="action">
-                          <span class="option-1">Добавить в Избранные</span>
-                          <span class="option-2">Добавлено в Избранные</span>
+                    <div class="heart-back-cont">
+                      <div title="Like" class="heart-container">
+                        <input id="Give-It-An-Id" class="checkbox" type="checkbox">
+                        <div class="svg-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="svg-outline" viewBox="0 0 24 24">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="svg-filled" viewBox="0 0 24 24">
+                                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="svg-celebrate">
+                                <polygon points="10,10 20,20"></polygon>
+                                <polygon points="10,50 20,50"></polygon>
+                                <polygon points="20,80 30,70"></polygon>
+                                <polygon points="90,10 80,20"></polygon>
+                                <polygon points="90,50 80,50"></polygon>
+                                <polygon points="80,80 70,70"></polygon>
+                            </svg>
                         </div>
-                </label>
+                      </div>
+                  </div>
                 <h3>Название</h3>
                 <p>Описание</p>  
               </div>        
@@ -105,37 +108,38 @@
                     <h2 class="price">20 руб. </h2><h2 class="old-price">24 руб. </h2>
                 </div>
                 <div class="btns">
-                  <button class="butt"><a href="">Подробнее →</a></button>
-                  <button class="butt"><a href="">В корзину</a></button>
+                  <button class="butt">Подробнее →</button>
+                  <button class="butt" onclick="document.location='cart.html'">В корзину</button>
               </div>
-            </div>    
+            </div>
+
             <div class="product info">
               <div class="block">
                 <img src="images/scarf.jpg" alt="">
                 <div class="block2">
-               <input value="favorite-button" name="favorite-checkbox" id="favorite" checked="checked" type="checkbox"/>
-                    <label class="c" for="favorite">
-                      <svg
-                        class="feather feather-heart"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
-                        stroke-width="2"
-                        stroke="currentColor"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        height="24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                        ></path>
-                      </svg>
-                      <div class="action">
-                        <span class="option-1">Добавить в Избранные</span>
-                        <span class="option-2">Добавлено в Избранные</span>
+                  <div class="heart-back-cont">
+                    <div title="Like" class="heart-container">
+                      <input id="Give-It-An-Id" class="checkbox" type="checkbox">
+                      <div class="svg-container">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="svg-outline" viewBox="0 0 24 24">
+                              <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                              </path>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" class="svg-filled" viewBox="0 0 24 24">
+                              <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                              </path>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="svg-celebrate">
+                              <polygon points="10,10 20,20"></polygon>
+                              <polygon points="10,50 20,50"></polygon>
+                              <polygon points="20,80 30,70"></polygon>
+                              <polygon points="90,10 80,20"></polygon>
+                              <polygon points="90,50 80,50"></polygon>
+                              <polygon points="80,80 70,70"></polygon>
+                          </svg>
                       </div>
-              </label>
+                    </div>
+                </div>
               <h3>Название</h3>
               <p>Описание</p>  
             </div>        
@@ -144,37 +148,38 @@
                   <h2 class="price">20 руб. </h2><h2 class="old-price">24 руб. </h2>
               </div>
               <div class="btns">
-                <button class="butt"><a href="">Подробнее →</a></button>
-                <button class="butt"><a href="">В корзину</a></button>
+                <button class="butt">Подробнее →</button>
+                <button class="butt" onclick="document.location='cart.html'">В корзину</button>
             </div>
           </div>
+
           <div class="product info">
             <div class="block">
               <img src="images/scarf.jpg" alt="">
               <div class="block2">
-             <input value="favorite-button" name="favorite-checkbox" id="favorite" checked="checked" type="checkbox"/>
-                  <label class="c" for="favorite">
-                    <svg
-                      class="feather feather-heart"
-                      stroke-linejoin="round"
-                      stroke-linecap="round"
-                      stroke-width="2"
-                      stroke="currentColor"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      height="24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                      ></path>
-                    </svg>
-                    <div class="action">
-                      <span class="option-1">Добавить в Избранные</span>
-                      <span class="option-2">Добавлено в Избранные</span>
+                <div class="heart-back-cont">
+                  <div title="Like" class="heart-container">
+                    <input id="Give-It-An-Id" class="checkbox" type="checkbox">
+                    <div class="svg-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="svg-outline" viewBox="0 0 24 24">
+                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                            </path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="svg-filled" viewBox="0 0 24 24">
+                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                            </path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="svg-celebrate">
+                            <polygon points="10,10 20,20"></polygon>
+                            <polygon points="10,50 20,50"></polygon>
+                            <polygon points="20,80 30,70"></polygon>
+                            <polygon points="90,10 80,20"></polygon>
+                            <polygon points="90,50 80,50"></polygon>
+                            <polygon points="80,80 70,70"></polygon>
+                        </svg>
                     </div>
-            </label>
+                  </div>
+              </div>
             <h3>Название</h3>
             <p>Описание</p>  
           </div>        
@@ -183,37 +188,38 @@
                 <h2 class="price">20 руб. </h2><h2 class="old-price">24 руб. </h2>
             </div>
             <div class="btns">
-              <button class="butt"><a href="">Подробнее →</a></button>
-              <button class="butt"><a href="">В корзину</a></button>
+              <button class="butt">Подробнее →</button>
+              <button class="butt cart" onclick="document.location='cart.html'">В корзину</button>
           </div>
         </div>
+
         <div class="product info">
           <div class="block">
             <img src="images/scarf.jpg" alt="">
             <div class="block2">
-           <input value="favorite-button" name="favorite-checkbox" id="favorite" checked="checked" type="checkbox"/>
-                <label class="c" for="favorite">
-                  <svg
-                    class="feather feather-heart"
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    height="24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                    ></path>
-                  </svg>
-                  <div class="action">
-                    <span class="option-1">Добавить в Избранные</span>
-                    <span class="option-2">Добавлено в Избранные</span>
+              <div class="heart-back-cont">
+                <div title="Like" class="heart-container">
+                  <input id="Give-It-An-Id" class="checkbox" type="checkbox">
+                  <div class="svg-container">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="svg-outline" viewBox="0 0 24 24">
+                          <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                          </path>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="svg-filled" viewBox="0 0 24 24">
+                          <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                          </path>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="svg-celebrate">
+                          <polygon points="10,10 20,20"></polygon>
+                          <polygon points="10,50 20,50"></polygon>
+                          <polygon points="20,80 30,70"></polygon>
+                          <polygon points="90,10 80,20"></polygon>
+                          <polygon points="90,50 80,50"></polygon>
+                          <polygon points="80,80 70,70"></polygon>
+                      </svg>
                   </div>
-          </label>
+                </div>
+            </div>
           <h3>Название</h3>
           <p>Описание</p>  
         </div>        
@@ -222,88 +228,12 @@
               <h2 class="price">20 руб. </h2><h2 class="old-price">24 руб. </h2>
           </div>
           <div class="btns">
-            <button class="butt"><a href="">Подробнее →</a></button>
-            <button class="butt"><a href="">В корзину</a></button>
+            <button class="butt">Подробнее →</button>
+            <button class="butt" onclick="document.location='cart.html'">В корзину</button>
         </div>
       </div>
-      <div class="product info">
-        <div class="block">
-          <img src="images/scarf.jpg" alt="">
-          <div class="block2">
-         <input value="favorite-button" name="favorite-checkbox" id="favorite" checked="checked" type="checkbox"/>
-              <label class="c" for="favorite">
-                <svg
-                  class="feather feather-heart"
-                  stroke-linejoin="round"
-                  stroke-linecap="round"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  height="24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                  ></path>
-                </svg>
-                <div class="action">
-                  <span class="option-1">Добавить в Избранные</span>
-                  <span class="option-2">Добавлено в Избранные</span>
-                </div>
-        </label>
-        <h3>Название</h3>
-        <p>Описание</p>  
-      </div>        
-    </div>
-        <div class="prices">
-            <h2 class="price">20 руб. </h2><h2 class="old-price">24 руб. </h2>
         </div>
-        <div class="btns">
-          <button class="butt"><a href="">Подробнее →</a></button>
-          <button class="butt"><a href="">В корзину</a></button>
-      </div>
-    </div>
-    <div class="product info">
-      <div class="block">
-        <img src="images/scarf.jpg" alt="">
-        <div class="block2">
-       <input value="favorite-button" name="favorite-checkbox" id="favorite" checked="checked" type="checkbox"/>
-            <label class="c" for="favorite">
-              <svg
-                class="feather feather-heart"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-                stroke-width="2"
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
-                height="24"
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                ></path>
-              </svg>
-              <div class="action">
-                <span class="option-1">Добавить в Избранные</span>
-                <span class="option-2">Добавлено в Избранные</span>
-              </div>
-      </label>
-      <h3>Название</h3>
-      <p>Описание</p>  
-    </div>        
-  </div>
-      <div class="prices">
-          <h2 class="price">20 руб. </h2><h2 class="old-price">24 руб. </h2>
-      </div>
-      <div class="btns">
-        <button class="butt"><a href="">Подробнее →</a></button>
-        <button class="butt"><a href="">В корзину</a></button>
-    </div>
-  </div>
+        <button class="button render m-4">ещё...</button>
   </div>
 </div>
     </main>
@@ -313,17 +243,17 @@
         <form>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputEmail4">ФИО</label>
-              <input type="text" class="form-control" id="inputEmail4" placeholder="">
+              <label for="inputEmail">Ваше Имя</label>
+              <input type="text" class="form-control" id="inputEmail" placeholder="" pattern="/^([А-ЯA-Z]|[А-ЯA-Z][\x27а-яa-z]{1,}|[А-ЯA-Z][\x27а-яa-z]{1,}\-([А-ЯA-Z][\x27а-яa-z]{1,}|(оглы)|(кызы)))\040[А-ЯA-Z][\x27а-яa-z]{1,}(\040[А-ЯA-Z][\x27а-яa-z]{1,})?$/" required>
             </div>
             <div class="form-group col-md-6">
-              <label for="inputPassword4">Номер телефона</label>
-              <input type="tel" class="form-control" id="inputPassword4" placeholder="+375xxxxxxxxx">
+              <label for="inputPhone">Номер телефона</label>
+              <input type="tel" class="form-control" id="inputPhone" placeholder="+375xxxxxxxxx" pattern="/^\+375[0-9]{9}$/g" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="inputAddress">Ваше сообщение</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Текст сообщения">
+            <label for="inputMessage">Ваше сообщение</label>
+            <input type="text" class="form-control" id="inputMessage" placeholder="Текст сообщения" pattern="/[\w\W\d\D]{10,}/g" required>
           </div>
           <div class="form-group">
             <div class="form-check">
@@ -333,7 +263,7 @@
               </label>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary" onclick="sendForm(event)">Отправить</button>
+          <button type="" class="btn btn-primary" onclick="sendForm(event)">Отправить</button>
         </form>
       </div>
       <div class="footer2">
@@ -409,8 +339,8 @@
                   <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
                   
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>Minsk, Belarus</p>
-                    <p> <i class="fa fa-envelope" aria-hidden="true"></i>info@gmail.com</p>
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Minsk, Belarus</p>
+                    <p> <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;info@gmail.com</p>
                     <p><i class="fa fa-phone"></i> + 375</p>
                     <p><i class="fa fa-phone"></i> + 375</p>
                   </div>

@@ -104,7 +104,7 @@ header{
 }
 
 .button:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .icon {
@@ -304,6 +304,8 @@ height: 600px;
 border: 1px solid rgba(46, 20, 77, 0.5);
 border-radius: 10px;
 background-color: rgba(110, 73, 153, 0.35);
+animation:  1s ease-in infinite; 
+;
 }
 .reasons{
   padding-top: 20px;
@@ -387,15 +389,15 @@ padding: 30px;
    top: 0; /* Положение подсказки */
   background: #d7c8f8; 
   color: #fff; 
-  padding: 5px; 
+  padding: 10px; 
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
   pointer-events: none; /* Подсказка */
   opacity: 0; /* Подсказка невидима */
   transition: 1s; /* Время появления подсказки */
  } 
  [data-tooltip]:hover::after {
-  opacity: 1; /* Показываем подсказку */
-  top: 2em; /* Положение подсказки */
+  opacity: 100%; /* Показываем подсказку */
+  top: 4em; /* Положение подсказки */
  }
 
 
@@ -442,8 +444,9 @@ form button{
   --font-color: #4c2a55;
   --bg-color: #fff;
   --main-color: #834794;
-  width: 150px;
-  height: 45px;
+  width: max-content;
+  height: max-content;
+  padding: 15px;
   border-radius: 5px;
   border: 2px solid var(--main-color);
   background-color: var(--bg-color);
@@ -457,4 +460,79 @@ form button{
 .button:active {
   box-shadow: 0px 0px var(--main-color);
   transform: translate(3px, 3px);
+}
+
+.btn-up {
+  /* фиксированное позиционирование */
+  position: fixed;
+  /* цвет фона */
+  background-color: #5015b6;
+  /* расстояние от правого края окна браузера */
+  right: 20px;
+  /* расстояние от нижнего края окна браузера */
+  bottom: 0px;
+  /* скругление верхнего левого угла */
+  border-top-left-radius: 8px;
+  /* скругление верхнего правого угла */
+  border-top-right-radius: 8px;
+  /* вид курсора */
+  cursor: pointer;
+  /* отображение элемента как flex */
+  display: flex;
+  /* выравниваем элементы внутри элемента по центру вдоль поперечной оси */
+  align-items: center;
+  /* выравниваем элементы внутри элемента по центру вдоль главной оси */
+  justify-content: center;
+  /* ширина элемента */
+  width: 60px;
+  /* высота элемента */
+  height: 50px;
+}
+
+.btn-up::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
+}
+
+.btn-up_hide {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-up:hover {
+    background-color: #301869; /* цвет заднего фона при наведении */
+  }
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;;
+}
+
+/* Задаем высоту большим блокам, чтобы у нас на странице получится скролл */
+.element-big  {
+  width: 100%;
+  height: 1200px;
+}
+
+.element-animation {
+  margin: 2rem 0;
+  font-size: 3rem;
+  
+  /* Скроем элемент в начальном состоянии */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.element-animation.element-show {
+  opacity: 1;
+  transition: all 1.5s;
+  transform: translateY(0%);
 }

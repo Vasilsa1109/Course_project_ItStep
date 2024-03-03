@@ -21,7 +21,7 @@
               <span></span>
             </button>
         </div>
-        <img src="images/icon.png" alt="" class="iconic">
+        <img src="images/icon.png" alt="" class="iconic"  onclick="document.location='index.html'">
         <nav class="main-menu">
             <ul>
                 <li><a href="index.html">Главная</a></li>
@@ -73,8 +73,8 @@
     <div class="btn-up btn-up_hide"></div>
         <div class="container d-flex flex-column justify-content-center align-items-center gap-3 p-4">
             <h1>Список пожеланий пуст</h1>
-            <p>Сохраняйте понравившиеся товары, нажав &#9825; возле карточки товара</p>
-            <button class="button" onclick="document.location='catalog.html'">Перейти в каталог товаров</button>
+            <h3>Сохраняйте понравившиеся товары, нажав &#9825; возле карточки товара</h3>
+            <button class="button" onclick="document.location='catalog.html'"><h4>Перейти в каталог товаров</h4></button>
         </div>
     </main>
     <footer>
@@ -83,12 +83,12 @@
         <form>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputEmail4">ФИО</label>
-              <input type="text" class="form-control" id="inputEmail4" placeholder="">
+              <label for="inputEmail">Ваше Имя</label>
+              <input type="text" class="form-control" id="inputEmail" placeholder="">
             </div>
             <div class="form-group col-md-6">
-              <label for="inputPassword4">Номер телефона</label>
-              <input type="tel" class="form-control" id="inputPassword4" placeholder="+375xxxxxxxxx">
+              <label for="inputPhone">Номер телефона</label>
+              <input type="tel" class="form-control" id="inputPassword" placeholder="+375xxxxxxxxx">
             </div>
           </div>
           <div class="form-group">
@@ -103,7 +103,7 @@
               </label>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary" onclick="sendForm(event)">Отправить</button>
+          <button type="" class="btn btn-primary" onclick="sendForm(event)">Отправить</button>
         </form>
       </div>
       <div class="footer2">

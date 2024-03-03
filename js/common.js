@@ -7,12 +7,10 @@ if(m){
         if(m.classList.contains("pushed")){
             m.classList.remove("pushed");
             nav.classList.remove("opened");
-            cont2.classList.remove("hidden");
         }
         else{
             m.classList.add("pushed");
             nav.classList.add("opened");
-            cont2.classList.add("hidden");
         }
     });
 }
@@ -96,58 +94,83 @@ $('.slider').slick({
     slidesToShow: 1,
     adaptiveHeight: true
   });
-      
 
   function sendForm(event) {
-    let error = 0;
-  
-    error += validate(
-      event.target[0],
-      /^[А-Я][а-яА-Я\s]*[а-я]$/g,
-      "Введите корректное имя"
-    );
-    error += validate(
-      event.target[3],
-      /^\+375[0-9]{9}$/g,
-      "Введите правильный номер телефона (+375ХХХХХХХХХ)"
-    );
-    error += validate(
-      event.target[4],
-      /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/g,
-      "Введите корректный адрес электронной почты"
-    );
-    error += validate(
-      event.target[5],
-      /^(https?:\/\/)?[0-9a-z-_]*(\.[0-9a-z-_]+)*(\.[a-z]+)+(\/[0-9a-z-_]*)*?\/?$/g,
-      "Введите корректный адрес URL"
-    );
-    error += validate(
-      event.target[6],
-      /[\w\W\d\D]{10,}/g,
-      "Ваш адрес слишком короток"
-    );
+    event.preventDefault();
+    var name = document.getElementById('inputEmail').value;
+    var phone = document.getElementById('inputPhone').value;
+    var message = document.getElementById('inputMessage').value;
+    var checkbox = document.getElementById('gridCheck').checked;
+    if(name.trim() === '' || phone.trim() === '' || message.trim() === ''  ){
+      alert("Введите все поля правильно.");
+      return;
     }
-  
-  
-  
-  
-  
-  function validate(element, regexTemplate, errorMessage) {
-    let val = element.value;
-    let errorField = document.createElement("div");
-    errorField.classList.add("error");
-  
-    if (element.nextElementSibling) {
-      element.nextElementSibling.remove();
-      element.classList.remove("error");
+    if(!checkbox){
+      alert("Нажмите checkbox-кнопку");
+      return;
     }
-  
-    if (!regexTemplate.test(val)) {
-      errorField.innerText = errorMessage;
-      element.parentElement.append(errorField);
-      element.classList.add("error");
-      return true;
-    } else {
-      return false;
+    if(name.value == null){
+      name.classList.add("error");
     }
-  };
+    if(phone.value == null){
+      phone.classList.add("error");
+    }
+    if(message.value == null){
+      message.classList.add("error");
+    }
+    if(checkbox.value == null){
+      message.classList.add("error");
+    }
+  }
+
+
+
+  const btnUp = {
+    el: document.querySelector('.btn-up'),
+    show() {
+      // удалим у кнопки класс btn-up_hide
+      this.el.classList.remove('btn-up_hide');
+    },
+    hide() {
+      // добавим к кнопке класс btn-up_hide
+      this.el.classList.add('btn-up_hide');
+    },
+    addEventListener() {
+      // при прокрутке содержимого страницы
+      window.addEventListener('scroll', () => {
+        // определяем величину прокрутки
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+        // если страница прокручена больше чем на 400px, то делаем кнопку видимой, иначе скрываем
+        scrollY > 400 ? this.show() : this.hide();
+      });
+      // при нажатии на кнопку .btn-up
+      document.querySelector('.btn-up').onclick = () => {
+        // переместим в начало страницы
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
+  
+  btnUp.addEventListener();
+
+
+  function onEntry(entry) {
+    entry.forEach(change => {
+      if (change.isIntersecting) {
+       change.target.classList.add('element-show');
+      }
+    });
+  }
+  
+  let options = {
+    threshold: [0.5] };
+  let observer = new IntersectionObserver(onEntry, options);
+  let elements = document.querySelectorAll('.element-animation');
+  
+  for (let elm of elements) {
+    observer.observe(elm);
+  }
