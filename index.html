@@ -212,22 +212,22 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail">Ваше Имя</label>
-              <input type="text" class="form-control" id="inputEmail" placeholder="">
+              <input type="text" class="form-control" id="inputEmail" placeholder="" required>
             </div>
             <div class="form-group col-md-6">
               <label for="inputPhone">Номер телефона</label>
-              <input type="tel" class="form-control" id="inputPassword" placeholder="+375xxxxxxxxx">
+              <input type="tel" class="form-control" id="inputPhone" placeholder="+375xxxxxxxxx" pattern="/^\+375[0-9]{9}$/g" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="inputAddress">Ваше сообщение</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Текст сообщения">
+            <label for="inputMessage">Ваше сообщение</label>
+            <input type="text" class="form-control" id="inputMessage" placeholder="Текст сообщения" required>
           </div>
           <div class="form-group">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <input class="form-check-input" type="checkbox" id="gridCheck" value="1">
               <label class="form-check-label" for="gridCheck">
-                Check me out
+                <b>Check me out</b>
               </label>
             </div>
           </div>
@@ -254,9 +254,7 @@
                      Вязаные изделия
                     </h6>
                     <p>
-                      Here you can use rows and columns to organize your footer
-                      content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit.
+                      Описание
                     </p>
                   </div>
                   <!-- Grid column -->
@@ -265,18 +263,18 @@
         
                   <!-- Grid column -->
                   <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+                    <h6 class="text-uppercase mb-4 font-weight-bold"> Полезные ссылки</h6>
                     <p>
-                      <a class="text-white">MDBootstrap</a>
+                      <a class="text-white" href="about.html">О нас</a>
                     </p>
                     <p>
-                      <a class="text-white">MDWordPress</a>
+                      <a class="text-white">Доставка</a>
                     </p>
                     <p>
-                      <a class="text-white">BrandFlow</a>
+                      <a class="text-white">Акции</a>
                     </p>
                     <p>
-                      <a class="text-white">Bootstrap Angular</a>
+                      <a class="text-white">Оплата</a>
                     </p>
                   </div>
                   <!-- Grid column -->
@@ -286,19 +284,19 @@
                   <!-- Grid column -->
                   <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">
-                      Useful links
+                      Дополнительно:
                     </h6>
                     <p>
-                      <a class="text-white">Your Account</a>
+                      <a class="text-white">Ссылка - 1</a>
                     </p>
                     <p>
-                      <a class="text-white">Become an Affiliate</a>
+                      <a class="text-white">Ссылка - 2</a>
                     </p>
                     <p>
-                      <a class="text-white">Shipping Rates</a>
+                      <a class="text-white">Ссылка - 3</a>
                     </p>
                     <p>
-                      <a class="text-white">Help</a>
+                      <a class="text-white">Ссылка - 4</a>
                     </p>
                   </div>
         
@@ -332,7 +330,9 @@
                       <a class="text-white" href="https://mdbootstrap.com/"
                          >Izdelia.com</a
                         >
+                        
                     </div>
+                    <p>This page was created by <a href="https://vasilsa1109.github.io/ITStepProjectWebSite/project/">Vasilisa V </a></p>
                     <!-- Copyright -->
                   </div>
                   <!-- Grid column -->

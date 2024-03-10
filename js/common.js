@@ -97,11 +97,12 @@ $('.slider').slick({
 
   function sendForm(event) {
     event.preventDefault();
-    var name = document.getElementById('inputEmail').value;
-    var phone = document.getElementById('inputPhone').value;
-    var message = document.getElementById('inputMessage').value;
-    var checkbox = document.getElementById('gridCheck').checked;
-    if(name.trim() === '' || phone.trim() === '' || message.trim() === ''  ){
+    let error = false;
+    var name = document.getElementById('inputEmail');
+    var phone = document.getElementById('inputPhone');
+    var message = document.getElementById('inputMessage');
+    var checkbox = document.getElementById('gridCheck');
+    if(name.value.trim() === '' || phone.value.trim() === '' || message.value.trim() === ''  ){
       alert("Введите все поля правильно.");
       return;
     }
@@ -109,21 +110,31 @@ $('.slider').slick({
       alert("Нажмите checkbox-кнопку");
       return;
     }
-    if(name.value == null){
+    if(!name.value ){
       name.classList.add("error");
+      error = true;
     }
-    if(phone.value == null){
+    let phoneTemplate = /^\+375[0-9]{9}$/g;
+    if(!phone.value || !phoneTemplate.test(phone.value)){
       phone.classList.add("error");
+      error = true;
     }
-    if(message.value == null){
+    if(!message.value){
       message.classList.add("error");
+      error = true;
     }
-    if(checkbox.value == null){
-      message.classList.add("error");
+    if(!checkbox.checked){
+      checkbox.classList.add("error");
+      error = true;
+    }
+    if(error)
+    {
+      alert('Форма заполнена неверно. Введите все поля правильно.');
+    }
+    else{
+      alert('Форма заполнена верно');
     }
   }
-
-
 
   const btnUp = {
     el: document.querySelector('.btn-up'),
@@ -166,11 +177,12 @@ $('.slider').slick({
     });
   }
   
-  let options = {
-    threshold: [0.5] };
+  let options = { threshold: [0.4] };
   let observer = new IntersectionObserver(onEntry, options);
-  let elements = document.querySelectorAll('.element-animation');
+  let elements = document.querySelectorAll('.reason');
+  let elements_ = document.querySelectorAll('.block');
   
   for (let elm of elements) {
     observer.observe(elm);
   }
+

@@ -108,8 +108,8 @@
                     <h2 class="price">20 руб. </h2><h2 class="old-price">24 руб. </h2>
                 </div>
                 <div class="btns">
-                  <button class="butt">Подробнее →</button>
-                  <button class="butt" onclick="document.location='cart.html'">В корзину</button>
+                  <button class="butt showinfo">Подробнее →</button>
+                  <button class="butt cart" onclick="document.location='cart.html'">В корзину</button>
               </div>
             </div>
 
@@ -148,7 +148,7 @@
                   <h2 class="price">20 руб. </h2><h2 class="old-price">24 руб. </h2>
               </div>
               <div class="btns">
-                <button class="butt">Подробнее →</button>
+                <button class="butt" onclick="productInfo(e)">Подробнее →</button>
                 <button class="butt" onclick="document.location='cart.html'">В корзину</button>
             </div>
           </div>
@@ -244,7 +244,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail">Ваше Имя</label>
-              <input type="text" class="form-control" id="inputEmail" placeholder="" pattern="/^([А-ЯA-Z]|[А-ЯA-Z][\x27а-яa-z]{1,}|[А-ЯA-Z][\x27а-яa-z]{1,}\-([А-ЯA-Z][\x27а-яa-z]{1,}|(оглы)|(кызы)))\040[А-ЯA-Z][\x27а-яa-z]{1,}(\040[А-ЯA-Z][\x27а-яa-z]{1,})?$/" required>
+              <input type="text" class="form-control" id="inputEmail" placeholder="" required>
             </div>
             <div class="form-group col-md-6">
               <label for="inputPhone">Номер телефона</label>
@@ -253,13 +253,13 @@
           </div>
           <div class="form-group">
             <label for="inputMessage">Ваше сообщение</label>
-            <input type="text" class="form-control" id="inputMessage" placeholder="Текст сообщения" pattern="/[\w\W\d\D]{10,}/g" required>
+            <input type="text" class="form-control" id="inputMessage" placeholder="Текст сообщения" required>
           </div>
           <div class="form-group">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <input class="form-check-input" type="checkbox" id="gridCheck" value="1">
               <label class="form-check-label" for="gridCheck">
-                Check me out
+                <b>Check me out</b>
               </label>
             </div>
           </div>
@@ -288,6 +288,7 @@
                       content. Lorem ipsum dolor sit amet, consectetur adipisicing
                       elit.
                     </p>
+                    <p>This page was created by <a href="https://vasilsa1109.github.io/ITStepProjectWebSite/project/">Vasilisa V </a></p>
                   </div>
                   <!-- Grid column -->
         
