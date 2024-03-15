@@ -185,4 +185,9 @@ $('.slider').slick({
   for (let elm of elements) {
     observer.observe(elm);
   }
-
+ 
+  let button = document.getElementById('r_button'); 
+  button.addEventListener("click", () => {
+    let reviews = document.querySelector('.reviews');
+    reviews.scrollIntoView({ behavior: "smooth" });
+  });

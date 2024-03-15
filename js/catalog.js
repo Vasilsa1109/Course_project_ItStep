@@ -1,8 +1,41 @@
 
 let products = [
-    { name: "Наушники", image: URL(""), price: 10},
-    { name: "Наушники", image: URL(""), price: 10},
-    { name: "Наушники", image: URL(""), price: 10},
+    {
+      name: "Product 1",
+      image: "images/scarf.jpg",
+      prices: { new: 100, old: 120 },
+      tieser: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    {
+      name: "Product 2",
+      image: "images/scarf.jpg",
+      prices: { new: 80, old: 90 },
+      tieser: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      name: "Product 3",
+      image: "images/scarf.jpg",
+      prices: { new: 150, old: 170 },
+      tieser: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    },
+    {
+        name: "Product 1",
+        image: "images/scarf.jpg",
+        prices: { new: 100, old: 120 },
+        tieser: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      },
+      {
+        name: "Product 2",
+        image: "images/scarf.jpg",
+        prices: { new: 80, old: 90 },
+        tieser: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      },
+      {
+        name: "Product 3",
+        image: "images/scarf.jpg",
+        prices: { new: 150, old: 170 },
+        tieser: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      }
   ];
 
 function render(products){
@@ -55,13 +88,12 @@ function render(products){
     productsList.insertAdjacentHTML("beforeend", productsCode);
 }
 
-let button = document.querySelector(".render");
+let button_render = document.getElementsByClassName(".render");
 
-if(button){
-    button.addEventListener("click", (e) => {
+    button_render.addEventListener("click", () => {
+        console.log(".....");
         render(products);
     });
-}
 
 
 function productInfo(e) {
