@@ -31,3 +31,16 @@ h3{
     background-color:  rgb(84, 34, 134);
     color: rgb(238, 222, 253); 
 }
+
+.sale{
+    animation: slidein 0.8s ease-out;
+  }
+  
+  @keyframes slidein {
+    0% {
+      transform: translateY(-25%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }

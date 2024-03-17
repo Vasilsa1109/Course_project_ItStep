@@ -11,7 +11,7 @@ html, body{
 header{
   padding: 15px;
   width: 100%;
-  height: 80px;
+  height: 90px;
   background: #a88dd1;
   position: fixed;
   display: flex;
@@ -189,7 +189,7 @@ h1, h2{
   text-align: center;
 }
 main{
-  padding-top: 80px;
+  padding-top: 110px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -208,7 +208,7 @@ position: relative;
 .image{
   width: 900px;
   height: 560px;
-  border: 3px solid rgba(39, 13, 59, 0.4);
+  box-shadow: 5px 5px 10px 5px rgb(87, 57, 124);
   margin-left: -250px;
   object-fit: cover; 
   border-radius: 10px;
@@ -234,6 +234,8 @@ align-items: center;
 gap: 20px;
 width: 600px;
 color:  rgba(39, 13, 59);
+background-color:rgb(214, 193, 241);
+padding: 10px;
 }
 main hr {
   border: 2px solid #4c2f79;
@@ -281,12 +283,22 @@ border-radius: 30%;
 }
 
 .slider{
-padding-top: 30px;
+padding: 30px;
 width: 600px;
 }
 .slick-slide{
 width: 300px;
 height: 300px;
+}
+.slick-prev{
+  background-color: rgb(51, 5, 95);
+  border-radius: 5px;
+  left: 12px;
+}
+.slick-next{
+  background-color: rgb(51, 5, 95);
+  border-radius: 5px;
+  right: 10px;
 }
 .slick-slide img{
 width: 100%;
@@ -503,21 +515,9 @@ form button{
   display: none;
 }
 
-@media (hover: hover) and (pointer: fine) {
   .btn-up:hover {
     background-color: #301869; /* цвет заднего фона при наведении */
   }
-}
-
-.green {
-  background-color: green;
-}
-
-.red {
-  background-color: red;;
-}
-
-
 
 .reason{
   opacity: 0;
@@ -530,7 +530,110 @@ form button{
   transform: translateY(0%);
 }
 
+.footer{
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.footer.element-show {
+  opacity: 1;
+  transition: all 1.0s;
+  transform: translateY(0%);
+}
+
 .footer h2{
   background-color: #d7c8f8;
   border-radius: 5px;
 }
+
+.img{
+  animation: slidein 0.8s ease-out;
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.slider{
+  animation: slide 0.8s ease-out;
+}
+
+
+.description{
+  animation: slide_d 0.8s ease-out;
+}
+
+@keyframes slide_d {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.reviews{
+  animation: slide_r 0.8s ease-out;
+}
+
+
+@keyframes slide_r {
+  0% {
+    transform: translateY(-25%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
+.rate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.rating {
+  display: inline-block;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  float: right;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.rating label:before {
+  content: '\2605';
+  font-size: 60px;
+}
+
+.otz .rating label:before {
+  content: '\2605''\2605''\2605''\2605''\2605';
+  font-size: 30px;
+  color: #291446;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #291446;
+  transition: color 0.3s;
+}
+
+.rating_value{
+  font-size: 2em;
+  font-weight: 700;
+}
+

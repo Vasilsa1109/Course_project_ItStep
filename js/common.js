@@ -15,7 +15,7 @@ if(m){
     });
 }
 
-$('.slider').slick({
+$('.s1').slick({
     dots: true,
     infinite: true,
     speed: 300,
@@ -132,6 +132,10 @@ $('.slider').slick({
       alert('Форма заполнена неверно. Введите все поля правильно.');
     }
     else{
+      name.classList.remove("error");
+      phone.classList.remove("error");
+      message.classList.remove("error");
+      checkbox.classList.remove("error");
       alert('Форма заполнена верно');
     }
   }
@@ -180,14 +184,52 @@ $('.slider').slick({
   let options = { threshold: [0.4] };
   let observer = new IntersectionObserver(onEntry, options);
   let elements = document.querySelectorAll('.reason');
-  let elements_ = document.querySelectorAll('.block');
+  let elements_ = document.querySelectorAll('.block1');
   
   for (let elm of elements) {
     observer.observe(elm);
   }
- 
+
+  function onEntry1(entry) {
+    entry.forEach(change => {
+      if (change.isIntersecting) {
+       change.target.classList.add('element-show');
+      }
+    });
+  }
+  
+  let options1 = { threshold: [0.4] };
+  let observer1 = new IntersectionObserver(onEntry1, options1);
+  let elements1 = document.querySelectorAll('.examples');
+  let elements_1 = document.querySelectorAll('main');
+  
+  for (let elm1 of elements1) {
+    observer1.observe(elm1);
+  }
+
+
+  function onEntry2(entry) {
+    entry.forEach(change => {
+      if (change.isIntersecting) {
+       change.target.classList.add('element-show');
+      }
+    });
+  }
+  
+  let options2 = { threshold: [0.4] };
+  let observer2 = new IntersectionObserver(onEntry2, options2);
+  let elements2 = document.querySelectorAll('.footer');
+  let elements_2 = document.querySelectorAll('footer');
+  
+  for (let elm2 of elements2) {
+    observer2.observe(elm2);
+  }
+
+
   let button = document.getElementById('r_button'); 
   button.addEventListener("click", () => {
     let reviews = document.querySelector('.reviews');
     reviews.scrollIntoView({ behavior: "smooth" });
   });
+
+

@@ -47,3 +47,16 @@ h1{
 footer{
     padding-top: 50px;
 }
+
+main{
+    animation: slidein 0.8s ease-out;
+  }
+  
+  @keyframes slidein {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
