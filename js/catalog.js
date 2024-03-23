@@ -168,23 +168,29 @@ let button_render = document.querySelector(".render");
     // });
 
 
-
-function addToCart(){
-    if (cart.classList.contains("checked")) {
+    
+     function addToCart(button) {
+      if (button.classList.contains("checked")) {
         alert("Товар удалён из корзины");
-        cart.classList.remove("checked");
-        cart.innerText = "В корзину";
+        button.classList.remove("checked");
+        button.innerText = "В корзину";
+      } else {
+        button.classList.add("checked");
+        button.innerText = "В корзине";
+      }
     }
-    else{
-        cart.classList.add("checked");
-        cart.innerText = "В корзине";
+    
+    let cartButtons = [...document.querySelectorAll(".cart")];
+    
+    if (cartButtons) {
+      cartButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          addToCart(event.target);
+        });
+      });
     }
-}
 
-let cart = document.querySelector(".cart");
-    cart.addEventListener("click", () => {
-        addToCart();
-     });
+
 
 
 let checkbox = document.querySelector('.checkbox');
