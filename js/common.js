@@ -233,3 +233,18 @@ $('.s1').slick({
   });
 
 
+
+  function insertStars() {
+    const ratingContainers = document.querySelectorAll('.rating');
+
+    ratingContainers.forEach(container => {
+      const input = container.querySelector('input[name="rating"]');
+      const starsValue = parseInt(input.value);
+      const starsHtml = '\u2605'.repeat(starsValue) + '\u2606'.repeat(5 - starsValue);
+      container.insertAdjacentHTML('beforeend', starsHtml);
+    });
+  }
+
+  window.addEventListener('load', () => {
+    insertStars();
+  });

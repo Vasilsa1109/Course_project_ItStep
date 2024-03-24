@@ -637,3 +637,10 @@ form button{
   font-weight: 700;
 }
 
+.rating {
+  display: inline-block;
+}
+
+.btn-primary{
+ width: max-content;
+}

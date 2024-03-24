@@ -1,24 +1,28 @@
 
 var products = [
     {
+      id: 1,
       name: "Product 1",
       image: "images/scarf.jpg",
       prices: { new: 100, old: 120 },
       tieser: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
+      id: 2,
       name: "Product 2",
       image: "images/scarf.jpg",
       prices: { new: 80, old: 90 },
       tieser: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
+      id: 3,
       name: "Product 3",
       image: "images/scarf.jpg",
       prices: { new: 150, old: 170 },
       tieser: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
+      id: 4,
         name: "Product 4",
         image: "images/scarf.jpg",
         prices: { new: 100, old: 120 },
@@ -26,12 +30,16 @@ var products = [
       }
   ];
 
-function render(products){
-
+function render(){
     var productsList = document.getElementsByClassName("card-list")[0];
     var productsCode = '';
+    var ids = window.localStorage.getItem("favorites") ? JSON.parse(window.localStorage.getItem("favorites")) : [];
+    var ids_cart = window.localStorage.getItem("ids_cart") ? JSON.parse(window.localStorage.getItem("ids_cart")) : [];
 
     products.forEach((product) => {
+        var cls = ids.includes(product.id) ? 'inFavorite' : '';
+        var cls_cart = ids_cart.includes(product.id) ? 'inCart' : '';
+
         var price = (product.prices.new > 0) ? `<h2 class="price">${product.prices.new} руб. </h2><h2 class="old-price">${product.prices.old} руб. </h2>` : `<h2 class="price">${product.prices.old} руб. </h2>`;
         
         productsCode +=`
@@ -41,25 +49,12 @@ function render(products){
                     <div class="block2">
                         <div class="heart-back-cont">
                             <div title="Like" class="heart-container">
-                            <input id="Give-It-An-Id" class="checkbox" type="checkbox">
-                            <div class="svg-container">
+                            <button onclick="addToFavorite(${product.id}, event)" class="${cls}">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="svg-outline" viewBox="0 0 24 24">
                                     <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
                                     </path>
                                 </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="svg-filled" viewBox="0 0 24 24">
-                                    <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                                    </path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="svg-celebrate">
-                                    <polygon points="10,10 20,20"></polygon>
-                                    <polygon points="10,50 20,50"></polygon>
-                                    <polygon points="20,80 30,70"></polygon>
-                                    <polygon points="90,10 80,20"></polygon>
-                                    <polygon points="90,50 80,50"></polygon>
-                                    <polygon points="80,80 70,70"></polygon>
-                                </svg>
-                            </div>
+                            </button>
                         </div>
                     </div>
                     <h3>${product.name}</h3>
@@ -73,6 +68,7 @@ function render(products){
                     <button type="button" class="butt showinfo" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Подробнее →
                   </button>
+                  <button onclick="addToCart(${product.id}, event)" class="butt cart ${cls_cart}">В корзину</button>
                   
                   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-xl">
@@ -96,28 +92,15 @@ function render(products){
             <div class="description">
               <h3>Название товара</h3>
               <div class="heart-back-cont">
-                <div title="Like" class="heart-container">
-                  <input id="Give-It-An-Id" class="checkbox" type="checkbox">
-                  <div class="svg-container">
+                  <div title="Like" class="heart-container">
+                  <button onclick="addToFavorite(${product.id}, event)" class="${cls}">
                       <svg xmlns="http://www.w3.org/2000/svg" class="svg-outline" viewBox="0 0 24 24">
                           <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
                           </path>
                       </svg>
-                      <svg xmlns="http://www.w3.org/2000/svg" class="svg-filled" viewBox="0 0 24 24">
-                          <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                          </path>
-                      </svg>
-                      <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="svg-celebrate">
-                          <polygon points="10,10 20,20"></polygon>
-                          <polygon points="10,50 20,50"></polygon>
-                          <polygon points="20,80 30,70"></polygon>
-                          <polygon points="90,10 80,20"></polygon>
-                          <polygon points="90,50 80,50"></polygon>
-                          <polygon points="80,80 70,70"></polygon>
-                      </svg>
-                  </div>
-                </div>
-              </div>
+                  </button>
+          </div>
+            </div>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates iusto, modi vitae dolorem veniam in. Quidem, rem tenetur, placeat numquam earum aliquam necessitatibus alias, in iusto veniam perferendis saepe sunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod doloribus autem sunt possimus nihil. Incidunt ipsa molestiae assumenda eos animi similique amet accusamus unde earum quod deserunt beatae, vero ab!</p>
               <div class="atricul"><b>Артикул товара: </b><i>#article</i></div>
               <h6>Выберите размер:</h6>
@@ -136,19 +119,16 @@ function render(products){
                 </label>
               </div>
               <div class="prices">
-                <h2 class="price">${price} </h2>
+                        <h2>${price}</h2>
+                    </div>
+                    <button onclick="addToCart(${product.id}, event)" class="butt cart ${cls_cart}">В корзину</button>
+                    <h6>Наличие: в наличии</h6>
             </div>
-            <button class="butt cart">В корзину</button>
-            <h6>Наличие: в наличии</h6>
              </div>
       </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                        </div>
                       </div>
                     </div>
                   </div>
-                        <button class="butt cart">В корзину</button>
                     </div>
         </div>`;
     });
@@ -156,54 +136,76 @@ function render(products){
     productsList.insertAdjacentHTML("beforeend", productsCode);
 }
 
-let button_render = document.querySelector(".render");
-    button_render.addEventListener("click", () => {
-        render(products);
-    });
-
     // let button = document.getElementById('r_button'); 
     // button.addEventListener("click", () => {
     //   let reviews = document.querySelector('.reviews');
     //   reviews.scrollIntoView({ behavior: "smooth" });
     // });
 
+  document.addEventListener("DOMContentLoaded", function(){
+    render();
 
-
-function addToCart(){
-    if (cart.classList.contains("checked")) {
-        alert("Товар удалён из корзины");
-        cart.classList.remove("checked");
-        cart.innerText = "В корзину";
-    }
-    else{
-        cart.classList.add("checked");
-        cart.innerText = "В корзине";
-    }
-}
-
-let cart = document.querySelector(".cart");
-    cart.addEventListener("click", () => {
-        addToCart();
-     });
-
-
-let checkbox = document.querySelector('.checkbox');
-let heart_cont = document.querySelector('.heart-container');
-checkbox.addEventListener('change', function() {
-    if (checkbox.checked) {
-        checkbox.classList.add("checked");
-        heart_cont.classList.add("checked");
-        alert("Товар добавлен в избранное");
-    }
-    else{
-        alert("Товар удалён из избранного");
-        checkbox.classList.remove("checked");
-        heart_cont.classList.remove("checked");
-    }
+    $('.lazy').slick({
+      lazyLoad: 'ondemand',
+      slidesToShow: 1,
+      slidesToScroll: 1
+    });
   });
 
-  $('.lazy').slick({
-    lazyLoad: 'ondemand',
-    slidesToShow: 1,
-    slidesToScroll: 1
-  });
+  function addToFavorite(productId, event)
+  {
+    let ids = window.localStorage.getItem("favorites") ? JSON.parse(window.localStorage.getItem("favorites")) : [];
+    let cls = "inFavorite";
+    let el = event.target;
+    if(event.target.tagName == "svg"){
+      el = event.target.parentElement;
+    }
+
+    if(ids.length > 0){
+      let index = ids.indexOf(productId);
+
+      if(index != -1){
+        ids.splice(index, 1);
+        el.classList.remove(cls);
+      }else{
+        ids.push(productId);
+        el.classList.add(cls);
+      }
+    }else{
+      ids.push(productId);
+      el.classList.add(cls);
+    }
+    
+    window.localStorage.setItem("favorites", JSON.stringify(ids));
+  }
+
+  function addToCart(productId, event)
+  {
+    let ids_cart = window.localStorage.getItem("cart_items") ? JSON.parse(window.localStorage.getItem("cart_items")) : [];
+    let cls_cart = "inCart";
+    let el = event.target;
+    // if(event.target.tagName == "svg"){
+    //   el = event.target.parentElement;
+    // }
+
+    if(ids_cart.length > 0){
+      let index = ids_cart.indexOf(productId);
+
+      if(index != -1){
+        ids_cart.splice(index, 1);
+        el.classList.remove(cls_cart);
+        el.innerText="В корзину";
+        
+      }else{
+        ids_cart.push(productId);
+        el.classList.add(cls_cart);
+        el.innerText="В корзине";
+      }
+    }else{
+      ids_cart.push(productId);
+      el.classList.add(cls_cart);
+      el.innerText="В корзине";
+    }
+    
+    window.localStorage.setItem("cart_items", JSON.stringify(ids_cart));
+  }
