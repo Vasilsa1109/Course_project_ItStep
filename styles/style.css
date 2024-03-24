@@ -603,8 +603,9 @@ form button{
   display: inline-block;
 }
 
-.rating input {
+.rating input{
   display: none;
+<<<<<<< HEAD
 }
 
 .rating label {
@@ -643,4 +644,7 @@ form button{
 
 .btn-primary{
  width: max-content;
+=======
+  opacity: 0;
+>>>>>>> 5a4088a40cf0947c265a032f01b1916006220ef8
 }

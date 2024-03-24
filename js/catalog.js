@@ -145,6 +145,7 @@ function render(){
   document.addEventListener("DOMContentLoaded", function(){
     render();
 
+<<<<<<< HEAD
     $('.lazy').slick({
       lazyLoad: 'ondemand',
       slidesToShow: 1,
@@ -187,6 +188,31 @@ function render(){
     // if(event.target.tagName == "svg"){
     //   el = event.target.parentElement;
     // }
+=======
+    
+     function addToCart(button) {
+      if (button.classList.contains("checked")) {
+        alert("Товар удалён из корзины");
+        button.classList.remove("checked");
+        button.innerText = "В корзину";
+      } else {
+        button.classList.add("checked");
+        button.innerText = "В корзине";
+      }
+    }
+    
+    let cartButtons = [...document.querySelectorAll(".cart")];
+    
+    if (cartButtons) {
+      cartButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          addToCart(event.target);
+        });
+      });
+    }
+
+
+>>>>>>> 5a4088a40cf0947c265a032f01b1916006220ef8
 
     if(ids_cart.length > 0){
       let index = ids_cart.indexOf(productId);
