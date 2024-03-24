@@ -233,10 +233,6 @@ $('.s1').slick({
   });
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 5a4088a40cf0947c265a032f01b1916006220ef8
   function insertStars() {
     const ratingContainers = document.querySelectorAll('.rating');
 
@@ -244,19 +240,10 @@ $('.s1').slick({
       const input = container.querySelector('input[name="rating"]');
       const starsValue = parseInt(input.value);
       const starsHtml = '\u2605'.repeat(starsValue) + '\u2606'.repeat(5 - starsValue);
-<<<<<<< HEAD
-=======
-      
->>>>>>> 5a4088a40cf0947c265a032f01b1916006220ef8
       container.insertAdjacentHTML('beforeend', starsHtml);
     });
   }
 
   window.addEventListener('load', () => {
     insertStars();
-<<<<<<< HEAD
   });
-=======
-  });
-
->>>>>>> 5a4088a40cf0947c265a032f01b1916006220ef8
