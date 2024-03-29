@@ -50,6 +50,11 @@
         width: 100%;
         padding: 0;
     }
+    .modal-body{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media(max-width: 1000px){
@@ -98,6 +103,18 @@
     .reason{
         font-size: 12px;
     }
+    .radio-inputs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 75px !important; 
+    }
+    .btn-up{
+        width: 30px;
+    height: 25px;
+    }
 }
 
 @media(max-width: 500px){
@@ -115,6 +132,19 @@
     .block h4:hover{
         font-size: 120%;
     }
+    .cl{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+  .cl h3{
+    font-size: 14px;
+    }
+    .cl a{
+        font-size: 14px;
+        }
 }
 
   @media(max-width: 380px){

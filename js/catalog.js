@@ -2,50 +2,61 @@
 var products = [
     {
       id: 1,
+      ids_cart: 11,
       name: "Product 1",
-      image: "images/scarf.jpg",
+      image1: "images/scarf.jpg",
+      image2: "images/scarf.jpg",
+      image3: "images/scarf.jpg",
       prices: { new: 100, old: 120 },
       tieser: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       id: 2,
+      ids_cart: 12,
       name: "Product 2",
-      image: "images/scarf.jpg",
+      image1: "images/scarf.jpg",
+      image2: "images/scarf.jpg",
+      image3: "images/scarf.jpg",
       prices: { new: 80, old: 90 },
       tieser: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
       id: 3,
+      ids_cart: 13,
       name: "Product 3",
-      image: "images/scarf.jpg",
+      image1: "images/scarf.jpg",
+      image2: "images/scarf.jpg",
+      image3: "images/scarf.jpg",
       prices: { new: 150, old: 170 },
       tieser: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
       id: 4,
+      ids_cart: 14,
         name: "Product 4",
-        image: "images/scarf.jpg",
+        image1: "images/scarf.jpg",
+        image2: "images/scarf.jpg",
+        image3: "images/scarf.jpg",
         prices: { new: 100, old: 120 },
         tieser: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       }
   ];
-
 function render(){
     var productsList = document.getElementsByClassName("card-list")[0];
     var productsCode = '';
     var ids = window.localStorage.getItem("favorites") ? JSON.parse(window.localStorage.getItem("favorites")) : [];
-    var ids_cart = window.localStorage.getItem("ids_cart") ? JSON.parse(window.localStorage.getItem("ids_cart")) : [];
+    var ids_cart = window.localStorage.getItem("cart_items") ? JSON.parse(window.localStorage.getItem("cart_items")) : [];
 
     products.forEach((product) => {
         var cls = ids.includes(product.id) ? 'inFavorite' : '';
-        var cls_cart = ids_cart.includes(product.id) ? 'inCart' : '';
+        var cls_cart = ids_cart.includes(product.ids_cart) ? 'inCart' : '';
 
         var price = (product.prices.new > 0) ? `<h2 class="price">${product.prices.new} руб. </h2><h2 class="old-price">${product.prices.old} руб. </h2>` : `<h2 class="price">${product.prices.old} руб. </h2>`;
         
         productsCode +=`
                 <div class="product info new_prod">
                 <div class="block">
-                    <img src="${product.image}" alt="${product.name}">
+                    <img src="${product.image1}" alt="${product.name}">
                     <div class="block2">
                         <div class="heart-back-cont">
                             <div title="Like" class="heart-container">
@@ -65,12 +76,12 @@ function render(){
                         <h2>${price}</h2>
                     </div>
                     <div class="btns">
-                    <button type="button" class="butt showinfo" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button type="button" class="butt showinfo" data-bs-toggle="modal" data-bs-target="#staticBackdrop${product.id}">
                     Подробнее →
                   </button>
-                  <button onclick="addToCart(${product.id}, event)" class="butt cart ${cls_cart}">В корзину</button>
+                  <button onclick="addToCart(${product.ids_cart}, event)" class="butt cart ${cls_cart}">В корзину</button>
                   
-                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal fade" id="staticBackdrop${product.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-xl">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -79,18 +90,18 @@ function render(){
                         </div>
                         <div class="modal-body">
           <div class="slider lazy">
-            <div class="">
-                <img src="images/scarf.jpg" alt="">
+            <div class="img">
+                <img src="${product.image1}" alt="">
             </div>
-            <div class="">
-                <img src="images/slippers.jpg" alt="">
+            <div class="img">
+                <img src="${product.image2}" alt="">
             </div>
-            <div class="">
-                <img src="images/socks.jpg" alt="">
+            <div class="img">
+                <img src="${product.image3}" alt="">
             </div>
           </div>
             <div class="description">
-              <h3>Название товара</h3>
+              <h3>${product.name}</h3>
               <div class="heart-back-cont">
                   <div title="Like" class="heart-container">
                   <button onclick="addToFavorite(${product.id}, event)" class="${cls}">
@@ -106,22 +117,22 @@ function render(){
               <h6>Выберите размер:</h6>
               <div class="radio-inputs">
                 <label class="radio">
-                  <input type="radio" name="radio" checked="">
+                  <input type="radio" name="radio" value="L" checked="">
                   <span class="name">L</span>
                 </label>
                 <label class="radio">
-                  <input type="radio" name="radio">
+                  <input type="radio" name="radio" value="S">
                   <span class="name">S</span>
                 </label>
                 <label class="radio">
-                  <input type="radio" name="radio">
+                  <input type="radio" name="radio" value="M">
                   <span class="name">M</span>
                 </label>
               </div>
               <div class="prices">
                         <h2>${price}</h2>
                     </div>
-                    <button onclick="addToCart(${product.id}, event)" class="butt cart ${cls_cart}">В корзину</button>
+                    <button onclick="addToCart(${product.ids_cart}, event)" class="butt cart ${cls_cart}">В корзину</button>
                     <h6>Наличие: в наличии</h6>
             </div>
              </div>
@@ -141,10 +152,8 @@ function render(){
     //   let reviews = document.querySelector('.reviews');
     //   reviews.scrollIntoView({ behavior: "smooth" });
     // });
-
   document.addEventListener("DOMContentLoaded", function(){
     render();
-
     $('.lazy').slick({
       lazyLoad: 'ondemand',
       slidesToShow: 1,
@@ -195,7 +204,6 @@ function render(){
         ids_cart.splice(index, 1);
         el.classList.remove(cls_cart);
         el.innerText="В корзину";
-        
       }else{
         ids_cart.push(productId);
         el.classList.add(cls_cart);
@@ -209,3 +217,10 @@ function render(){
     
     window.localStorage.setItem("cart_items", JSON.stringify(ids_cart));
   }
+
+let radios = document.querySelectorAll('input[type="radio"]');
+radios.forEach(radio =>{
+  radio.addEventListener('change', function (){
+    localStorage.setItem('selectedSize', this.value);
+  })
+})

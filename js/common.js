@@ -247,3 +247,5 @@ $('.s1').slick({
   window.addEventListener('load', () => {
     insertStars();
   });
+
+  

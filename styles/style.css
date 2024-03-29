@@ -283,20 +283,39 @@ background-color: #ded1fd;
 border-radius: 30%;
 }
 
-.slider{
+/* .slider{
 padding: 30px;
 width: 600px;
 }
 .slick-slide{
 width: 300px;
 height: 300px;
+} */
+
+.slider {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
 }
+.slick-slide{
+  height: 300px;
+  } 
+
+.slider .slick-slide img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+
 .slick-prev{
   background-color: rgb(51, 5, 95);
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  left: 10px;
   top: 50%;
   z-index: 3;
 }
@@ -305,7 +324,6 @@ height: 300px;
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  right: 8px;
   top: 50%;
 }
 .slick-slide img{
