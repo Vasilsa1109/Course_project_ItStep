@@ -43,22 +43,63 @@
     }
     .reason{
         height: max-content;
+        width: 100%;
+        padding: 5px;
     }
     .reason img{
-        width: 50%;
+        width: 100%;
+        padding: 0;
     }
 }
+
+@media(max-width: 1000px){
+    .block{
+        display: flex;
+        flex-direction: column;
+    }
+    .block img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
 @media(max-width: 900px){
     .reviews{
         display: flex;
         flex-direction: column;
     }
+    .image{
+        width: 500px;
+        height: 500px;
+    }
+    .quality{
+        position: absolute;
+        left: 50%;
+    }
+    .location{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .location img{
+      width: 80%;
+      height: 80%;
+    }   
 }
+
 @media(max-width: 700px){
     .button{
-        padding: 8px;
+        padding: 5px;
+    }
+    .items{
+        display: none;
+    }
+    .reason{
+        font-size: 12px;
     }
 }
+
 @media(max-width: 500px){
     .line{
         display: flex;
@@ -67,5 +108,33 @@
     }
     .form-control{
         width: 300px;
+    }
+    h4{
+        font-size: 10px;
+    }
+    .block h4:hover{
+        font-size: 120%;
+    }
+}
+
+  @media(max-width: 380px){
+    .prices, .btns {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+      }
+    .form-control{
+        width: 180px;
+    }
+    .media{
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .media a{
+            display: flex;
+            justify-content: center;
     }
 }
