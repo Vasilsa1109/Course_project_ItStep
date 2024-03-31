@@ -1,46 +1,4 @@
 
-var products = [
-    {
-      id: 1,
-      ids_cart: 11,
-      name: "Product 1",
-      image1: "images/scarf.jpg",
-      image2: "images/scarf.jpg",
-      image3: "images/scarf.jpg",
-      prices: { new: 100, old: 120 },
-      tieser: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    },
-    {
-      id: 2,
-      ids_cart: 12,
-      name: "Product 2",
-      image1: "images/scarf.jpg",
-      image2: "images/scarf.jpg",
-      image3: "images/scarf.jpg",
-      prices: { new: 80, old: 90 },
-      tieser: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: 3,
-      ids_cart: 13,
-      name: "Product 3",
-      image1: "images/scarf.jpg",
-      image2: "images/scarf.jpg",
-      image3: "images/scarf.jpg",
-      prices: { new: 150, old: 170 },
-      tieser: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-    {
-      id: 4,
-      ids_cart: 14,
-        name: "Product 4",
-        image1: "images/scarf.jpg",
-        image2: "images/scarf.jpg",
-        image3: "images/scarf.jpg",
-        prices: { new: 100, old: 120 },
-        tieser: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      }
-  ];
 function render(){
     var productsList = document.getElementsByClassName("card-list")[0];
     var productsCode = '';
@@ -50,9 +8,7 @@ function render(){
     products.forEach((product) => {
         var cls = ids.includes(product.id) ? 'inFavorite' : '';
         var cls_cart = ids_cart.includes(product.ids_cart) ? 'inCart' : '';
-
         var price = (product.prices.new > 0) ? `<h2 class="price">${product.prices.new} руб. </h2><h2 class="old-price">${product.prices.old} руб. </h2>` : `<h2 class="price">${product.prices.old} руб. </h2>`;
-        
         productsCode +=`
                 <div class="product info new_prod">
                 <div class="block">
@@ -90,13 +46,13 @@ function render(){
                         </div>
                         <div class="modal-body">
           <div class="slider lazy">
-            <div class="img">
+            <div>
                 <img src="${product.image1}" alt="">
             </div>
-            <div class="img">
+            <div>
                 <img src="${product.image2}" alt="">
             </div>
-            <div class="img">
+            <div>
                 <img src="${product.image3}" alt="">
             </div>
           </div>
@@ -113,7 +69,7 @@ function render(){
           </div>
             </div>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates iusto, modi vitae dolorem veniam in. Quidem, rem tenetur, placeat numquam earum aliquam necessitatibus alias, in iusto veniam perferendis saepe sunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod doloribus autem sunt possimus nihil. Incidunt ipsa molestiae assumenda eos animi similique amet accusamus unde earum quod deserunt beatae, vero ab!</p>
-              <div class="atricul"><b>Артикул товара: </b><i>#article</i></div>
+              <div class="atricul"><b>Артикул товара: </b><i>${product.article}</i></div>
               <h6>Выберите размер:</h6>
               <div class="radio-inputs">
                 <label class="radio">
@@ -143,7 +99,7 @@ function render(){
                     </div>
         </div>`;
     });
-
+    
     productsList.insertAdjacentHTML("beforeend", productsCode);
 }
 
@@ -154,7 +110,7 @@ function render(){
     // });
   document.addEventListener("DOMContentLoaded", function(){
     render();
-    $('.lazy').slick({
+    $('.slider').slick({
       lazyLoad: 'ondemand',
       slidesToShow: 1,
       slidesToScroll: 1
@@ -184,7 +140,6 @@ function render(){
       ids.push(productId);
       el.classList.add(cls);
     }
-    
     window.localStorage.setItem("favorites", JSON.stringify(ids));
   }
 
@@ -214,7 +169,6 @@ function render(){
       el.classList.add(cls_cart);
       el.innerText="В корзине";
     }
-    
     window.localStorage.setItem("cart_items", JSON.stringify(ids_cart));
   }
 
