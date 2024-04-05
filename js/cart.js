@@ -13,11 +13,17 @@ function render(){
         node.appendChild(textnode);
         productsList.appendChild(node);
         }
+
+        let total = 0;
+
     filtered.forEach((product) => {
+
         var cls = ids.includes(product.id) ? 'inFavorite' : '';
         var cls_cart = ids_cart.includes(product.ids_cart) ? 'inCart' : '';
 
         var price = (product.prices.new > 0) ? `<h2 class="price">${product.prices.new} руб. </h2><h2 class="old-price">${product.prices.old} руб. </h2>` : `<h2 class="price">${product.prices.old} руб. </h2>`;
+        
+        total += (product.prices.new > 0) ? product.prices.new : product.prices.old;
         
         productsCode +=`
                 <div class="product info new_prod">
@@ -46,7 +52,16 @@ function render(){
                   `;
     });
     productsList.insertAdjacentHTML("beforeend", productsCode);
+    let totalPriceNode = document.querySelector('.price h3');
+    totalPriceNode.textContent = `${total} руб.`;
+
+    if (filtered.length > 0) {
+      el.innerText="В корзине";
+  }
 }
+
+
+
 
 function addToFavorite(productId, event)
 {
@@ -79,9 +94,9 @@ function addToCart(productId, event)
   let ids_cart = window.localStorage.getItem("cart_items") ? JSON.parse(window.localStorage.getItem("cart_items")) : [];
   let cls_cart = "inCart";
   let el = event.target;
-  // if(event.target.tagName == "svg"){
-  //   el = event.target.parentElement;
-  // }
+  if(event.target.tagName == "svg"){
+    el = event.target.parentElement;
+  }
 
   if(ids_cart.length > 0){
     let index = ids_cart.indexOf(productId);
@@ -102,9 +117,8 @@ function addToCart(productId, event)
   }
   window.localStorage.setItem("cart_items", JSON.stringify(ids_cart));
 }
+
 document.addEventListener("DOMContentLoaded", function(){
     render();
-    if (filtered.length > 0) {
-        el.innerText="В корзине";
-    }
   });
+
