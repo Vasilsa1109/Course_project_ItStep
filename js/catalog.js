@@ -99,7 +99,6 @@ function render(){
                     </div>
         </div>`;
     });
-    
     productsList.insertAdjacentHTML("beforeend", productsCode);
 }
 
@@ -117,9 +116,9 @@ function render(){
     });
     let cart_button = document.querySelector(".cart");
     
-     if(cart_button.classList.contains("inCart")){
-      cart_button.innerText="В корзине";
-     }
+    if(cart_button.classList.contains("inCart")){
+     cart_button.innerText="В корзине";
+    }
   });
 
   function addToFavorite(productId, event)

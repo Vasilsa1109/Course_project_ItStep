@@ -436,10 +436,6 @@ padding: 30px;
   border: 2px solid red;
   box-shadow: 2px 2px 5px rgb(128, 20, 20);
 }
-
-input:valid {
-  border: 2px solid rgb(79, 50, 148);
-}
 form{
   display: flex;
   flex-direction: column;
@@ -673,28 +669,51 @@ form button{
 .data{
   display: flex;
   flex-direction: column;
-  background-color: #b389f3;
+  background-color: #d5bcfa;
   padding: 30px;
   border-radius: 5px;
   width: 100%;
+  box-shadow: 1px 5px 10px 0 rgb(87, 57, 124);
 }
 
 .delivery-options{
-  background-color: #b389f3;
+  background-color: #d5b9ff;
   width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
   gap: 40px;
+  box-shadow: 1px 5px 10px 0 rgb(87, 57, 124);
 }
 .delivery-options h2{
-  border: 5px dashed #7e5eaa;
+  border-bottom: 5px solid #7e5eaa;
   padding: 10px;
 }
 .delivery-options label{
-  background-color: #aa77e8;
+  background-color: #ac8bd4;
   width: 100%;
   font-size: large;
   font-weight: bold;
   padding: 5px;
+}
+
+.input {
+  -webkit-appearance: none;
+  margin: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  vertical-align: middle;
+  background-color: rgb(59, 33, 80);
+}
+
+.input:checked {
+    background-color: #e7d2ff;
+    border: 2px solid #120a42;
+}
+
+.form-group label{
+margin: 10px;
+font-weight: 500;
 }

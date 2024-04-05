@@ -71,57 +71,67 @@
     <main  class="d-flex flex-column  align-items-center ">
         <div class="btn-up btn-up_hide"></div>
        <h1>Корзина товаров</h1>
-       <div class="card-list">
+       <div class="card-list" style="max-width: 70%;">
        </div>
        <div class="price">Итоговая цена:
         <h3>руб</h3>
       </div>
-      <div class="data d-flex align-items-center">
+      <div class="data">
         <h2>Введите ваши данные для оформления заказа:</h2>
         <form>
-            <div class="form-group" style="width: 100%;">
+          <div class="form-row">
+            <div class="form-group col-md-6">
               <label for="inputEmail">Ваше Имя</label>
               <input type="text" class="form-control" id="inputEmail" placeholder="" required>
             </div>
-            <div class="form-group" style="width: 100%;">
+            <div class="form-group col-md-6">
               <label for="inputPhone">Номер телефона</label>
               <input type="tel" class="form-control" id="inputPhone" placeholder="+375xxxxxxxxx" pattern="/^\+375[0-9]{9}$/g" required>
             </div>
-             <div class="form-group" style="width: 100%;">
+          </div>
+          <div class="form-group">
+            <label for="inputAdress">Адрес</label>
+            <input type="text" class="form-control" id="inputAdress" placeholder="г.Минск, ул. ___ - (кв) 11"  required>
+          </div>
+          <div class="form-group" style="width: 100%;">
             <label for="inputMessage">Комментарий к заказу</label>
             <textarea  type="text" class="form-control" id="inputMessage" placeholder="Текст сообщения" required>
             
             </textarea>
           </div>
-          </div>
         </form>
       </div>
+    
       <div class="delivery-options">
         <h2>Выберите способ доставки:</h2>
-        <label for="delivery-type">
-            <input type="radio" id="delivery-type1" name="delivery" value="courier">
-            Курьерская доставка
-        </label>
-    
-        <label for="delivery-type">
-            <input type="radio" id="delivery-type2" name="delivery" value="pickup">
-            Самовывоз
-        </label>
-    
-        <label for="delivery-type">
-            <input type="radio" id="delivery-type3" name="delivery" value="post">
-            Почтовая доставка
-        </label>
+          <label for="delivery-type">
+            <input name="radio" type="radio" class="input" checked="">Курьерская доставка
+          </label>
+          <label for="delivery-type">
+            <input name="radio" type="radio" class="input">Самовывоз
+          </label>
+          <label for="delivery-type">
+            <input name="radio" type="radio" class="input">Почтовая доставка
+          </label>
         </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" value="1">
-            <label class="form-check-label" for="gridCheck">
-              <b>Check me out</b>
-            </label>
+
+
+        <div class="delivery-options">
+          <h2>Выберите способ оплаты:</h2>
+          <label for="delivery-type">
+              <input name="radio" type="radio" class="input" checked="">
+              Оплата онлайн
+          </label>
+          <label for="delivery-type">
+              <input name="radio" type="radio" class="input" checked="">
+              Оплата при получении
+          </label>
+          <label for="delivery-type">
+            <input name="radio" type="radio" class="input" checked="">
+            Оплата через ЕРИП
+        </label>
           </div>
-        </div>
-      <button type="" class="btn btn-primary" onclick="sendForm(event)">Отправить заказ</button>
+      <button type="" class="btn btn-primary order" onclick="sendFormOrder(event)">Отправить заказ</button>
     </main>
     <footer>
       <div class="footer">
@@ -140,14 +150,6 @@
           <div class="form-group">
             <label for="inputMessage">Ваше сообщение</label>
             <input type="text" class="form-control" id="inputMessage" placeholder="Текст сообщения" required>
-          </div>
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck" value="1">
-              <label class="form-check-label" for="gridCheck">
-                <b>Check me out</b>
-              </label>
-            </div>
           </div>
           <button type="" class="btn btn-primary" onclick="sendForm(event)">Отправить</button>
         </form>

@@ -101,13 +101,8 @@ $('.s1').slick({
     var name = document.getElementById('inputEmail');
     var phone = document.getElementById('inputPhone');
     var message = document.getElementById('inputMessage');
-    var checkbox = document.getElementById('gridCheck');
     if(name.value.trim() === '' || phone.value.trim() === '' || message.value.trim() === ''  ){
       alert("Введите все поля правильно.");
-      return;
-    }
-    if(!checkbox){
-      alert("Нажмите checkbox-кнопку");
       return;
     }
     if(!name.value ){
@@ -123,10 +118,6 @@ $('.s1').slick({
       message.classList.add("error");
       error = true;
     }
-    if(!checkbox.checked){
-      checkbox.classList.add("error");
-      error = true;
-    }
     if(error)
     {
       alert('Форма заполнена неверно. Введите все поля правильно.');
@@ -135,10 +126,19 @@ $('.s1').slick({
       name.classList.remove("error");
       phone.classList.remove("error");
       message.classList.remove("error");
-      checkbox.classList.remove("error");
       alert('Форма заполнена верно');
     }
   }
+  function sendFormOrder(event) {
+    event.preventDefault();
+    let inputs = document.querySelectorAll('.input');
+    if(inputs.checked) {
+        alert('Радиокнопка выбрана!');
+    } 
+    else {
+      alert('Радиокнопка не выбрана.');
+    }
+    }
 
   const btnUp = {
     el: document.querySelector('.btn-up'),
