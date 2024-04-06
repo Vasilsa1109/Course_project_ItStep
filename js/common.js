@@ -95,6 +95,9 @@ $('.s1').slick({
     adaptiveHeight: true
   });
 
+
+  
+
   function sendForm(event) {
     event.preventDefault();
     let error = false;
@@ -129,16 +132,32 @@ $('.s1').slick({
       alert('Форма заполнена верно');
     }
   }
-  function sendFormOrder(event) {
-    event.preventDefault();
-    let inputs = document.querySelectorAll('.input');
-    if(inputs.checked) {
-        alert('Радиокнопка выбрана!');
-    } 
-    else {
-      alert('Радиокнопка не выбрана.');
+  function sendFormOrder() {
+    sendForm(event);
+    let deliveryOptions = document.querySelectorAll('.delivery-options');
+    let selected1 = false;
+    let selected2 = false;
+  
+    deliveryOptions.forEach((options) => {
+      let radioButtons = options.querySelectorAll('input[type=radio]');
+      
+      radioButtons.forEach((radio) => {
+        if (radio.checked) {
+          if (radio.getAttribute('name') === 'radio') {
+            selected1 = true;
+          } else if (radio.getAttribute('name') === 'radio2') {
+            selected2 = true;
+          }
+        }
+      });
+    });
+    
+    if ((!selected1 && !selected2) || (!selected1 || !selected2)) {
+      alert('Выберите все пункты');
+    } else {
+      alert('Заказ успешно отправлен');
     }
-    }
+  }
 
   const btnUp = {
     el: document.querySelector('.btn-up'),
@@ -247,5 +266,3 @@ $('.s1').slick({
   window.addEventListener('load', () => {
     insertStars();
   });
-
-  

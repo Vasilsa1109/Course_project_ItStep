@@ -102,10 +102,10 @@
         </form>
       </div>
     
-      <div class="delivery-options">
+      <div class="delivery-options first">
         <h2>Выберите способ доставки:</h2>
           <label for="delivery-type">
-            <input name="radio" type="radio" class="input" checked="">Курьерская доставка
+            <input name="radio" type="radio" class="input">Курьерская доставка
           </label>
           <label for="delivery-type">
             <input name="radio" type="radio" class="input">Самовывоз
@@ -116,21 +116,22 @@
         </div>
 
 
-        <div class="delivery-options">
+        <div class="delivery-options second">
           <h2>Выберите способ оплаты:</h2>
           <label for="delivery-type">
-              <input name="radio" type="radio" class="input" checked="">
+              <input name="radio2" type="radio" class="input">
               Оплата онлайн
           </label>
           <label for="delivery-type">
-              <input name="radio" type="radio" class="input" checked="">
+              <input name="radio2" type="radio" class="input">
               Оплата при получении
           </label>
           <label for="delivery-type">
-            <input name="radio" type="radio" class="input" checked="">
+            <input name="radio2" type="radio" class="input">
             Оплата через ЕРИП
         </label>
           </div>
+          
       <button type="" class="btn btn-primary order" onclick="sendFormOrder(event)">Отправить заказ</button>
     </main>
     <footer>

@@ -114,11 +114,11 @@ function render(){
       slidesToShow: 1,
       slidesToScroll: 1
     });
-    let cart_button = document.querySelector(".cart");
+    // let cart_button = document.querySelector(".cart");
     
-    if(cart_button.classList.contains("inCart")){
-     cart_button.innerText="В корзине";
-    }
+    // if(cart_button.classList.contains("inCart")){
+    //  cart_button.innerText="В корзине";
+    // }
   });
 
   function addToFavorite(productId, event)

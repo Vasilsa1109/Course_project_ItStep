@@ -73,6 +73,35 @@ function addToFavorite(productId, event)
   
   window.localStorage.setItem("favorites", JSON.stringify(ids));
 }
+function addToCart(productId, event)
+{
+  let ids_cart = window.localStorage.getItem("cart_items") ? JSON.parse(window.localStorage.getItem("cart_items")) : [];
+  let cls_cart = "inCart";
+  let el = event.target;
+  // if(event.target.tagName == "svg"){
+  //   el = event.target.parentElement;
+  // }
+
+  if(ids_cart.length > 0){
+    let index = ids_cart.indexOf(productId);
+
+    if(index != -1){
+      ids_cart.splice(index, 1);
+      el.classList.remove(cls_cart);
+      el.innerText="В корзину";
+    }else{
+      ids_cart.push(productId);
+      el.classList.add(cls_cart);
+      el.innerText="В корзине";
+    }
+  }else{
+    ids_cart.push(productId);
+    el.classList.add(cls_cart);
+    el.innerText="В корзине";
+  }
+  window.localStorage.setItem("cart_items", JSON.stringify(ids_cart));
+}
+
 document.addEventListener("DOMContentLoaded", function(){
     render();
   });
