@@ -240,9 +240,12 @@ border-radius: 5px;
 }
 main hr {
   border: 2px solid #4c2f79;
-  margin: 40px 0;
   background-image: linear-gradient(to right, #FFF, #BFE2FF, #FFF);
   width: 100%;
+}
+hr{
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 hr:before,
 hr:after {
@@ -307,16 +310,12 @@ height: 300px;
 .slick-prev{
   background-color: rgb(51, 5, 95);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
   top: 50%;
   z-index: 3;
 }
 .slick-next{
   background-color: rgb(51, 5, 95);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
   top: 50%;
 }
 .slick-slide img{

@@ -16,6 +16,8 @@ function render(){
 
         let total = 0;
 
+        var quantity = 1;    
+
     filtered.forEach((product) => {
 
         var cls = ids.includes(product.id) ? 'inFavorite' : '';
@@ -25,6 +27,8 @@ function render(){
         
         total += (product.prices.new > 0) ? product.prices.new : product.prices.old;
         
+
+
         productsCode +=`
                 <div class="product info new_prod">
                 <div class="block">
@@ -49,19 +53,23 @@ function render(){
                     </div>
                   <button onclick="addToCart(${product.ids_cart}, event)" class="butt cart ${cls_cart}">В корзине</button>
             </div>
-                  `;
+      
+<button type="button" class="button_amount">
+Добавить товар
+</button>
+<button class="button__icon"  onclick="addAmount()">+</button>
+<h4 class="quantity">Текущее количество товара: ${quantity} шт.</h4>
+                `;
     });
     productsList.insertAdjacentHTML("beforeend", productsCode);
     let totalPriceNode = document.querySelector('.price h3');
     totalPriceNode.textContent = `${total} руб.`;
-
-    if (filtered.length > 0) {
-      el.innerText="В корзине";
-  }
 }
 
-
-
+function addAmount(){
+  quantity=quantity1;
+  document.querySelector('.quantity').textContent = `Текущее количество товара: ${quantity1} шт.`; 
+}
 
 function addToFavorite(productId, event)
 {

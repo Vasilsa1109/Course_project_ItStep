@@ -92,6 +92,17 @@ main {
 .slider_ .slick-prev,
 .slider_ .slick-next {
     position: relative;
-    z-index: 2;
-} 
+    z-index: 99;
+}
 
+.cl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.location h4{
+    padding: 30px;
+}

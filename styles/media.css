@@ -129,13 +129,6 @@
     .block h4:hover{
         font-size: 120%;
     }
-    .cl{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 15px;
-    }
   .cl h3{
     font-size: 14px;
     }
