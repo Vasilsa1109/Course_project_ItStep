@@ -4,11 +4,13 @@ function render(){
     var productsCode = '';
     var ids = window.localStorage.getItem("favorites") ? JSON.parse(window.localStorage.getItem("favorites")) : [];
     var ids_cart = window.localStorage.getItem("cart_items") ? JSON.parse(window.localStorage.getItem("cart_items")) : [];
+    var ids_product = window.localStorage.getItem("products") ? JSON.parse(window.localStorage.getItem("products")) : [];
 
     products.forEach((product) => {
         var cls = ids.includes(product.id) ? 'inFavorite' : '';
         var cls_cart = ids_cart.includes(product.ids_cart) ? 'inCart' : '';
         var price = (product.prices.new > 0) ? `<h2 class="price">${product.prices.new} руб. </h2><h2 class="old-price">${product.prices.old} руб. </h2>` : `<h2 class="price">${product.prices.old} руб. </h2>`;
+        var buttonHtml = `class="butt cart ${cls_cart}">${ids_cart.includes(product.id) ? 'Товар в корзине' : 'Добавить в корзину'}`;
         productsCode +=`
                 <div class="product info new_prod">
                 <div class="block">
@@ -35,7 +37,7 @@ function render(){
                     <button type="button" class="butt showinfo" data-bs-toggle="modal" data-bs-target="#staticBackdrop${product.id}">
                     Подробнее →
                   </button>
-                  <button onclick="addToCart(${product.ids_cart}, event)" class="butt cart ${cls_cart}">В корзину</button>
+                  <button onclick="addToCart(${product.ids_cart}, event)" ${buttonHtml}</button>
                   
                   <div class="modal fade" id="staticBackdrop${product.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-xl">
@@ -88,7 +90,7 @@ function render(){
               <div class="prices">
                         <h2>${price}</h2>
                     </div>
-                    <button onclick="addToCart(${product.ids_cart}, event)" class="butt cart ${cls_cart}">В корзину</button>
+                    <button onclick="addToCart(${product.ids_cart}, event)" ${buttonHtml}</button>
                     <h6>Наличие: в наличии</h6>
             </div>
              </div>
@@ -114,11 +116,6 @@ function render(){
       slidesToShow: 1,
       slidesToScroll: 1
     });
-    // let cart_button = document.querySelector(".cart");
-    
-    // if(cart_button.classList.contains("inCart")){
-    //  cart_button.innerText="В корзине";
-    // }
   });
 
   function addToFavorite(productId, event)
@@ -162,23 +159,30 @@ function render(){
       if(index != -1){
         ids_cart.splice(index, 1);
         el.classList.remove(cls_cart);
-        el.innerText="В корзину";
       }else{
         ids_cart.push(productId);
         el.classList.add(cls_cart);
-        el.innerText="В корзине";
       }
     }else{
       ids_cart.push(productId);
       el.classList.add(cls_cart);
-      el.innerText="В корзине";
     }
     window.localStorage.setItem("cart_items", JSON.stringify(ids_cart));
   }
 
-let radios = document.querySelectorAll('input[type="radio"]');
-radios.forEach(radio =>{
-  radio.addEventListener('change', function (){
-    localStorage.setItem('selectedSize', this.value);
-  })
-})
+  let radios = document.querySelectorAll('input[type="radio"]');
+  radios.forEach(radio => {
+    radio.addEventListener('change', function() {
+      let ids_product = window.localStorage.getItem("products") ? JSON.parse(window.localStorage.getItem("products")) : [];
+      let productId = this.dataset.id;
+      let selectedSize = this.dataset.value;
+  
+      let product = products.find(item => item.product.id === Number(productId));
+      if (product) {
+        product.product.size = selectedSize;
+      }
+  
+      window.localStorage.setItem('products', JSON.stringify(ids_product));
+    });
+  });
+  

@@ -54,10 +54,6 @@ function render(){
                   <button onclick="addToCart(${product.ids_cart}, event)" class="butt cart ${cls_cart}">В корзине</button>
             </div>
       
-<button type="button" class="button_amount">
-Добавить товар
-</button>
-<button class="button__icon"  onclick="addAmount()">+</button>
 <h4 class="quantity">Текущее количество товара: ${quantity} шт.</h4>
                 `;
     });

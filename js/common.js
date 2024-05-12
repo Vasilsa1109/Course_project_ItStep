@@ -152,9 +152,10 @@ $('.s1').slick({
       });
     });
     
-    if ((!selected1 && !selected2) || (!selected1 || !selected2)) {
+    if ((!selected1 && !selected2) || (!selected1 || !selected2))  {
       alert('Выберите все пункты');
-    } else {
+    } 
+    else {
       alert('Заказ успешно отправлен');
     }
   }

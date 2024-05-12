@@ -1,7 +1,7 @@
 
 var products = [
     {
-      id: 1,
+      product: { id: 1, size: '' } ,   
       ids_cart: 11,
       name: "Product 1",
       image1: "images/socks.jpg",
@@ -12,7 +12,7 @@ var products = [
       article: "#37555"
     },
     {
-      id: 2,
+      product: { id: 2, size: '' } ,   
       ids_cart: 12,
       name: "Product 2",
       image1: "images/scarf.jpg",
@@ -23,7 +23,7 @@ var products = [
       article: "#34550"
     },
     {
-      id: 3,
+      product: { id: 3, size: '' } ,  
       ids_cart: 13,
       name: "Product 3",
       image1: "images/scarf.jpg",
@@ -34,7 +34,7 @@ var products = [
       article: "#31555"
     },
     {
-      id: 4,
+      product: { id: 4, size: '' } ,  
       ids_cart: 14,
         name: "Product 4",
         image1: "images/scarf.jpg",
@@ -45,7 +45,7 @@ var products = [
         article: "#34255"
       },
       {
-        id: 5,
+        product: { id: 5, size: '' } ,  
         ids_cart: 15,
         name: "Product 5",
         image1: "images/scarf.jpg",
@@ -56,7 +56,7 @@ var products = [
         article: "#34552"
       },
       {
-        id: 6,
+        product: { id: 6, size: '' } ,  
         ids_cart: 16,
         name: "Product 6",
         image1: "images/scarf.jpg",
@@ -67,7 +67,7 @@ var products = [
         article: "#34555"
     },
       {
-        id: 7,
+        product: { id: 7, size: '' } ,  
         ids_cart: 17,
         name: "Product 7",
         image1: "images/scarf.jpg",
@@ -78,7 +78,7 @@ var products = [
         article: "#34555"
     },
       {
-        id: 8,
+        product: { id: 8, size: '' } ,  
         ids_cart: 18,
           name: "Product 8",
           image1: "images/scarf.jpg",
