@@ -22,7 +22,7 @@
 }
 .sale img{
     width: 60%;
-    height: 400px;
+    height: max-content;
     object-fit: cover;
     border: 5px solid rgb(44, 17, 71);
 }

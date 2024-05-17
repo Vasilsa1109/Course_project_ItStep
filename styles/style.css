@@ -200,14 +200,14 @@ main .container{
 }
 .img{
 width: 900px;
-height: 560px;
+height: 100%;
 display: flex;
 flex-direction: column;
 position: relative;
 }
 .image{
   width: 900px;
-  height: 560px;
+  height: 100%;
   box-shadow: 5px 5px 10px 5px rgb(87, 57, 124);
   margin-left: -250px;
   object-fit: cover; 
@@ -224,6 +224,7 @@ display: flex;
 gap: 50px;
 width: 100%;
 }
+
 .cont2 h3{
 text-align: center;
 }

@@ -100,43 +100,38 @@ $('.s1').slick({
 
   function sendForm(event) {
     event.preventDefault();
-    let error = false;
+    let error2 = false;
     var name = document.getElementById('inputEmail');
     var phone = document.getElementById('inputPhone');
     var message = document.getElementById('inputMessage');
-    if(name.value.trim() === '' || phone.value.trim() === '' || message.value.trim() === ''  ){
-      alert("Введите все поля правильно.");
-      return;
-    }
-    if(!name.value ){
+    if (!name.value) {
       name.classList.add("error");
-      error = true;
+      error2 = true;
     }
     let phoneTemplate = /^\+375[0-9]{9}$/g;
-    if(!phone.value || !phoneTemplate.test(phone.value)){
+    if (!phone.value || !phoneTemplate.test(phone.value)) {
       phone.classList.add("error");
-      error = true;
+      error2 = true;
     }
-    if(!message.value){
+    if (!message.value) {
       message.classList.add("error");
-      error = true;
+      error2 = true;
     }
-    if(error)
-    {
+    if (error2) {
       alert('Форма заполнена неверно. Введите все поля правильно.');
-    }
-    else{
+    } else {
       name.classList.remove("error");
       phone.classList.remove("error");
       message.classList.remove("error");
       alert('Форма заполнена верно');
     }
   }
-  function sendFormOrder() {
-    sendForm(event);
+  
+  function sendFormOrder(event) {
     let deliveryOptions = document.querySelectorAll('.delivery-options');
     let selected1 = false;
     let selected2 = false;
+    let error = false;
   
     deliveryOptions.forEach((options) => {
       let radioButtons = options.querySelectorAll('input[type=radio]');
@@ -151,14 +146,18 @@ $('.s1').slick({
         }
       });
     });
-    
-    if ((!selected1 && !selected2) || (!selected1 || !selected2))  {
+  
+    sendForm(event);
+  
+    if ((!selected1 || !selected2) || error  || error2) {
       alert('Выберите все пункты');
     } 
-    else {
+    else if(!error && !error2){
       alert('Заказ успешно отправлен');
     }
   }
+  
+  
 
   const btnUp = {
     el: document.querySelector('.btn-up'),
