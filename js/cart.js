@@ -1,6 +1,4 @@
 function render() {
-
-
   var productsList = document.getElementsByClassName("card-list")[0];
   var productsCode = "";
   var ids = window.localStorage.getItem("favorites")
@@ -13,14 +11,11 @@ function render() {
     ? JSON.parse(window.localStorage.getItem("products_sizes"))
     : [];
 
-
-    var filtered = products.filter((product)=>{
-      return ids_cart.includes(product.ids_cart);
+  var filtered = products.filter((product) => {
+    return ids_cart.includes(product.ids_cart);
   });
-  
 
   filtered.forEach((product) => {
-
     var cls = ids.includes(product.id) ? "inFavorite" : "";
     var cls_cart = ids_cart.includes(product.ids_cart) ? "inCart" : "";
     var price =
@@ -34,15 +29,16 @@ function render() {
         : "Добавить в корзину"
     }`;
 
-
     if (filtered.length == 0) {
       const node = document.createElement("h1");
-      const textnode = document.createTextNode("Список товаров в корзине пуст. Сохраняйте понравившиеся товары, нажав на кнопку");
+      const textnode = document.createTextNode(
+        "Список товаров в корзине пуст. Сохраняйте понравившиеся товары, нажав на кнопку"
+      );
       node.appendChild(textnode);
       productsList.appendChild(node);
-      }
+    }
 
-      var quantity = 1;    
+    var quantity = 1;
 
     let productSizes = ``;
     if (product.sizes) {
@@ -52,7 +48,7 @@ function render() {
         let checked = productSize == size ? 'checked="checked"' : "";
 
         productSizes += `<label class="radio">
-        <input type="radio" name="radio" value="${size}" class="product-size" ${checked}>
+        <input type="radio" name="radio${product.id}" value="${size}" class="product-size" ${checked}>
         <span class="name">${size}</span>
       </label>`;
       });
@@ -60,12 +56,13 @@ function render() {
     function getTotal(filtered) {
       let total = 0;
       filtered.forEach((product) => {
-        total += product.prices.new > 0 ? product.prices.new : product.prices.old;
+        total +=
+          product.prices.new > 0 ? product.prices.new : product.prices.old;
       });
-      let totalPriceNode = document.querySelector('.price h3');
+      let totalPriceNode = document.querySelector(".price h3");
       totalPriceNode.textContent = `${total} руб.`;
-    }  
-     
+    }
+
     getTotal(filtered);
 
     productsCode += `
@@ -112,70 +109,70 @@ function render() {
   productsList.insertAdjacentHTML("beforeend", productsCode);
 }
 
-
-
-
-function addAmount(){
-  quantity=quantity1;
-  document.querySelector('.quantity').textContent = `Текущее количество товара: ${quantity1} шт.`; 
+function addAmount() {
+  quantity = quantity1;
+  document.querySelector(
+    ".quantity"
+  ).textContent = `Текущее количество товара: ${quantity1} шт.`;
 }
 
-function addToFavorite(productId, event)
-{
-  let ids = window.localStorage.getItem("favorites") ? JSON.parse(window.localStorage.getItem("favorites")) : [];
+function addToFavorite(productId, event) {
+  let ids = window.localStorage.getItem("favorites")
+    ? JSON.parse(window.localStorage.getItem("favorites"))
+    : [];
   let cls = "inFavorite";
   let el = event.target;
-  if(event.target.tagName == "svg"){
+  if (event.target.tagName == "svg") {
     el = event.target.parentElement;
   }
 
-  if(ids.length > 0){
+  if (ids.length > 0) {
     let index = ids.indexOf(productId);
 
-    if(index != -1){
+    if (index != -1) {
       ids.splice(index, 1);
       el.classList.remove(cls);
-    }else{
+    } else {
       ids.push(productId);
       el.classList.add(cls);
     }
-  }else{
+  } else {
     ids.push(productId);
     el.classList.add(cls);
   }
-  
+
   window.localStorage.setItem("favorites", JSON.stringify(ids));
 }
-function addToCart(productId, event)
-{
-  let ids_cart = window.localStorage.getItem("cart_items") ? JSON.parse(window.localStorage.getItem("cart_items")) : [];
+function addToCart(productId, event) {
+  let ids_cart = window.localStorage.getItem("cart_items")
+    ? JSON.parse(window.localStorage.getItem("cart_items"))
+    : [];
   let cls_cart = "inCart";
   let el = event.target;
-  if(event.target.tagName == "svg"){
+  if (event.target.tagName == "svg") {
     el = event.target.parentElement;
   }
 
-  if(ids_cart.length > 0){
+  if (ids_cart.length > 0) {
     let index = ids_cart.indexOf(productId);
 
-    if(index != -1){
+    if (index != -1) {
       ids_cart.splice(index, 1);
       el.classList.remove(cls_cart);
-      el.innerText="В корзину";
-    }else{
+      el.innerText = "В корзину";
+    } else {
       ids_cart.push(productId);
       el.classList.add(cls_cart);
-      el.innerText="В корзине";
+      el.innerText = "В корзине";
     }
-  }else{
+  } else {
     ids_cart.push(productId);
     el.classList.add(cls_cart);
-    el.innerText="В корзине";
+    el.innerText = "В корзине";
   }
   window.localStorage.setItem("cart_items", JSON.stringify(ids_cart));
 }
 
-document.addEventListener("DOMContentLoaded", function(){
-    render();
-  });
-
+document.addEventListener("DOMContentLoaded", function () {
+  render();
+});

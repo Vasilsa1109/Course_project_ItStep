@@ -80,17 +80,11 @@ function render() {
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-          <div class="slider lazy">
-            <div>
-                <img src="${product.image1}" alt="">
-            </div>
-            <div>
-                <img src="${product.image2}" alt="">
-            </div>
-            <div>
-                <img src="${product.image3}" alt="">
-            </div>
-          </div>
+                        <div class="product-modal-images">
+                          <img src="${product.image1}" alt="">
+                          <img src="${product.image2}" alt="">
+                          <img src="${product.image3}" alt="">
+                        </div>
             <div class="description">
               <h3>${product.name}</h3>
               <div class="heart-back-cont">
@@ -132,11 +126,6 @@ function render() {
   productsList.insertAdjacentHTML("beforeend", productsCode);
 }
 
-// let button = document.getElementById('r_button');
-// button.addEventListener("click", () => {
-//   let reviews = document.querySelector('.reviews');
-//   reviews.scrollIntoView({ behavior: "smooth" });
-// });
 document.addEventListener("DOMContentLoaded", function () {
   render();
   $(".slider").slick({
