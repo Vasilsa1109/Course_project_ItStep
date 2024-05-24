@@ -104,7 +104,7 @@ function render() {
               </div>
                   <div class="prices">
                       <h2>${price}</h2>
-                  
+              
                   </div>
                   <button onclick="addToCart(${
                     product.ids_cart
