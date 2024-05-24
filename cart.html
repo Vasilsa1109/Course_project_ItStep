@@ -64,6 +64,7 @@
                 <li><a href="catalog.html">Каталог товаров</a></li>
                 <li><a href="about.html">О нас</a></li>
                 <li><a href="sales.html">Акции</a></li>
+                <li><a href="cart.html">Корзина товаров</a></li>
                 <li><a href="contact.html">Контакты</a></li>
             </ul>
         </nav>
@@ -121,19 +122,15 @@
             </div>
             <div class="form-group col-md-6">
               <label for="inputPhone">Номер телефона</label>
-              <input type="tel" class="form-control" id="inputPhone" placeholder="+375xxxxxxxxx" pattern="/^\+375[0-9]{9}$/g" required>
+              <input type="tel" class="form-control" id="inputPhone" placeholder="+375xxxxxxxxx"
+                pattern="/^\+375[0-9]{9}$/g" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="inputAdress">Адрес</label>
-            <input type="text" class="form-control" id="inputAdress" placeholder="г.Минск, ул. ___ - (кв) 11"  required>
+            <label for="inputMessage">Ваше сообщение</label>
+            <input type="text" class="form-control" id="inputMessage" placeholder="Текст сообщения" required>
           </div>
-          <div class="form-group" style="width: 100%;">
-            <label for="inputMessage">Комментарий к заказу</label>
-            <textarea  type="text" class="form-control" id="inputMessage" placeholder="Текст сообщения" required>
-            
-            </textarea>
-          </div>
+          <button type="" class="btn btn-primary" onclick="sendForm(event)">Отправить</button>
         </form>
       </div>
     

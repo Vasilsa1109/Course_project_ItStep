@@ -103,17 +103,15 @@ function render() {
               <div class="atricul"><b>Артикул товара: </b><i>${
                 product.article
               }</i></div>
-              <h6>Выберите размер:</h6>
-              <div class="radio-inputs">
-                ${productSizes}
-              </div>
               <div class="prices">
                         <h2>${price}</h2>
                     </div>
+                   
                     <button onclick="addToCart(${
                       product.ids_cart
                     }, event)" ${buttonHtml}</button>
                     <h6>Наличие: в наличии</h6>
+                    
             </div>
              </div>
       </div>
