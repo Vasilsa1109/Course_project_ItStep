@@ -103,7 +103,6 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    width: 75px !important;
   }
   .btn-up {
     width: 30px;

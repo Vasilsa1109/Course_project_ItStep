@@ -156,15 +156,14 @@ footer {
 .radio-inputs {
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: 50px;
-  flex-wrap: wrap;
   border-radius: 0.5rem;
   background-color: #eee;
   box-sizing: border-box;
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-  padding: 16px;
-  width: 300px;
+  width: max-content;
+  padding: 30px;
   font-size: 14px;
 }
 
@@ -234,4 +233,9 @@ footer {
   object-fit: cover;
   aspect-ratio: 1/1;
   width: 100%;
+}
+
+.radio-inputs span{
+  width: max-content;
+  padding: 5px;
 }
