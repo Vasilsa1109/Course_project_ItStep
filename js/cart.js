@@ -38,8 +38,6 @@ function render() {
       productsList.appendChild(node);
     }
 
-    var quantity = 1;
-
     let productSizes = ``;
     if (product.sizes) {
       product.sizes.forEach((size) => {

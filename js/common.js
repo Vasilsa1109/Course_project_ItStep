@@ -43,7 +43,7 @@ $(".slider_").slick({
 
 function sendForm(event) {
   event.preventDefault();
-  let error2 = false;
+  var error2 = false;
   var name = document.getElementById("inputEmail");
   var phone = document.getElementById("inputPhone");
   var message = document.getElementById("inputMessage");
@@ -74,7 +74,7 @@ function sendFormOrder(event) {
   let deliveryOptions = document.querySelectorAll(".delivery-options");
   let selected1 = false;
   let selected2 = false;
-  let error = false;
+  var error = false;
 
   deliveryOptions.forEach((options) => {
     let radioButtons = options.querySelectorAll("input[type=radio]");
@@ -90,11 +90,10 @@ function sendFormOrder(event) {
     });
   });
 
-  sendForm(event);
-
-  if (!selected1 || !selected2 || error || error2) {
+  if (!selected1 || !selected2 || error) {
     alert("Выберите все пункты");
-  } else if (!error && !error2) {
+  } 
+  if (!error && selected1 && selected2) {
     alert("Заказ успешно отправлен");
   }
 }
@@ -146,23 +145,6 @@ let elements_ = document.querySelectorAll(".block1");
 
 for (let elm of elements) {
   observer.observe(elm);
-}
-
-function onEntry1(entry) {
-  entry.forEach((change) => {
-    if (change.isIntersecting) {
-      change.target.classList.add("element-show");
-    }
-  });
-}
-
-let options1 = { threshold: [0.4] };
-let observer1 = new IntersectionObserver(onEntry1, options1);
-let elements1 = document.querySelectorAll(".examples");
-let elements_1 = document.querySelectorAll("main");
-
-for (let elm1 of elements1) {
-  observer1.observe(elm1);
 }
 
 function onEntry2(entry) {
